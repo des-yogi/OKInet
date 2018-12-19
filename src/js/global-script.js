@@ -23,7 +23,7 @@
 
 (function(){
   // code
-  const name = 'Doode';
+/*  const name = 'Doode';
   let str = `
   Здравствуйте ${name}.
   Мы в ${new Date().getFullYear()} году
@@ -49,5 +49,5 @@ function printf(format, ...params) {
 }
 
 printf('%s %d %.2f', 'adrian', 321, Math.PI);
-
+*/
 }());

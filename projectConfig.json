@@ -21,7 +21,30 @@
     "tabs": [],
     "object-fit-polyfill": [],
     "is-mobile": [],
-    "embed-responsive": []
+    "embed-responsive": [],
+    "lang-switcher": [],
+    "main-slider": [],
+    "rate-block": [],
+    "service-block": [],
+    "single-text-block": [],
+    "news-block": [],
+    "news-slider": [],
+    "map-block": [],
+    "rate-page": [],
+    "news-page": [],
+    "news-single-page": [],
+    "actions-page": [],
+    "actions-block": [],
+    "action-single-page": [],
+    "home-single-page": [],
+    "services-single-page": [],
+    "page-404": [],
+    "tv-page": [],
+    "tv-rate-block": [],
+    "subscribers-page": [],
+    "vacancy-page": [],
+    "contacts-page": [],
+    "partners-block": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",
@@ -30,8 +53,7 @@
     "../../node_modules/swiper/dist/css/swiper.css",
     "../../node_modules/semantic-ui-accordion/accordion.css"
   ],
-  "addCssAfter": [
-  ],
+  "addCssAfter": [],
   "singleCompiled": [
     "./node_modules/normalize.css/normalize.css"
   ],

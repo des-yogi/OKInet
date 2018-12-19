@@ -1,32 +1,56 @@
-// Этот блок ответственен ТОЛЬКО за типографику проекта.
-// Не пишите тут какую-либо стороннюю стилизацию.
+/* roboto-regular - latin_cyrillic */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'),
+    url('../fonts/roboto-v18-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/roboto-v18-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
-//        url('../fonts/FONTNAME.woff') format('woff'),
-//        url('../fonts/FONTNAME.ttf')  format('truetype');
-//   font-weight: 400;
-//   font-style: normal;
-// }
+/* roboto-500 - latin_cyrillic */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+    url('../fonts/roboto-v18-latin_cyrillic-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/roboto-v18-latin_cyrillic-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
-
+/* roboto-700 - latin_cyrillic */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+    url('../fonts/roboto-v18-latin_cyrillic-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/roboto-v18-latin_cyrillic-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 body {
   // ТОЛЬКО типографика!
   font-family: $font-family;
-  font-size: $font-size;
+  font-size: 16px;
   line-height: $line-height;
   text-rendering: optimizeLegibility;
   color: $text-color;
+  text-decoration-skip: ink;
+
+  @media (min-width: $screen-xl) {
+    font-size: 18px;
+  }
 }
 
-// .h1,
-// .h2,
-// .h3,
-// .h4,
-// .h5,
-// .h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
 h1,
 h2,
 h3,
@@ -36,22 +60,22 @@ h6 {
   font-family: $font-family;
   font-weight: 700;
   line-height: $line-height;
-  color: $title-color;
+  color: $text-color;
 }
 
-// .h1,
-// .h2,
-// .h3,
+.h1,
+.h2,
 h1,
-h2,
-h3 {
-  margin-top: $line-height;
+h2 {
+  margin-top: 0;
   margin-bottom: ($line-height / 2);
 }
 
-// .h4,
-// .h5,
-// .h6,
+.h3,
+.h4,
+.h5,
+.h6,
+h3,
 h4,
 h5,
 h6 {
@@ -59,37 +83,37 @@ h6 {
   margin-bottom: ($line-height / 2);
 }
 
-// .h1,
-/* h1 {
+.h1,
+h1 {
   font-size: $font-size--h1;
 }
 
-// .h2,
+.h2,
 h2 {
   font-size: $font-size--h2;
 }
 
-// .h3,
+.h3,
 h3 {
   font-size: $font-size--h3;
 }
 
-// .h4,
+.h4,
 h4 {
   font-size: $font-size--h4;
 }
 
-// .h5,
+.h5,
 h5 {
   font-size: $font-size--h5;
 }
 
-// .h6,
+.h6,
 h6 {
   font-size: $font-size--h6;
-} */
+}
 
-// .p,
+.p,
 p,
 ul,
 ol,
@@ -101,6 +125,7 @@ figure {
   margin-top: ($line-height / 2);
   margin-bottom: ($line-height / 2);
   color: currentColor;
+  hyphens: auto;
 }
 
 address {
@@ -138,7 +163,7 @@ small {
 
 sub,
 sup {
-  font-size: 70%;
+  font-size: 65%;
 }
 
 b,
@@ -154,4 +179,28 @@ blockquote {
   padding: 0;
   margin-left: 0;
   margin-right: 0;
+}
+
+a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  color: $second-color;
+  text-decoration-skip: ink;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+a, b, i, strong, em, small, code {
+  line-height: 0;
+}
+
+q {
+  quotes:  "«" "»";
 }
