@@ -44,7 +44,9 @@
     "subscribers-page": [],
     "vacancy-page": [],
     "contacts-page": [],
-    "partners-block": []
+    "partners-block": [],
+    "copyrights": [],
+    "call-now-btn": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

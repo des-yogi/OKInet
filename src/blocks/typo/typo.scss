@@ -198,7 +198,7 @@ a {
 }
 
 a, b, i, strong, em, small, code {
-  line-height: 0;
+  line-height: inherit;
 }
 
 q {

@@ -1,0 +1,12 @@
+.call-now-btn {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &--header {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+  }
+}

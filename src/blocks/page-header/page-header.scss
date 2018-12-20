@@ -1,8 +1,122 @@
-// В этом файле должны быть стили для БЭМ-блока page-header, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-header {
 
   $block-name:                &; // #{$block-name}__element
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    color: $main-color;
+    box-shadow: $shadow-btn;
+
+    svg {
+      display: block;
+      width: 28px;
+      height: 30px;
+      fill: currentColor;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+      background-color: $main-color;
+    }
+  }
+
+  &__user-label {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px;
+    }
+  }
+
+  &__contacts {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    box-shadow: inset 0 3px 5px -1.5px rgba(0, 0, 0, 0.25);
+  }
+
+  &__contacts-tel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__tel-link {
+    display: block;
+    font-size: 0.875rem;
+    color: $text-color;
+  }
+
+  @keyframes rotate-light {
+    0% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(10deg);
+    }
+  }
+
+  &__contacts-callback {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px 10px;
+
+    &:hover,
+    &:active,
+    &:focus {
+      svg {
+        animation: rotate-light 0.3s ease-in-out infinite both;
+      }
+    }
+  }
+
+  &__callback-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    fill: currentColor;
+    text-decoration: none;
+  }
+
+  &__callback-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    color: currentColor;
+    text-decoration: inherit;
+  }
+
+  &__navigation {
+
+  }
+
+  &__lang {
+
+  }
 }
