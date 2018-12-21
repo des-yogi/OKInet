@@ -3,10 +3,16 @@
   $block-name:                &; // #{$block-name}__element
 
   &__top {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 10px;
+
+    @media (min-width: $screen-md) {
+      z-index: 5;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    }
   }
 
   &__user {
@@ -32,6 +38,11 @@
       color: $white;
       background-color: $main-color;
     }
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+      order: 1;
+    }
   }
 
   &__user-label {
@@ -52,6 +63,17 @@
     padding-right: 10px;
     text-align: center;
     box-shadow: inset 0 3px 5px -1.5px rgba(0, 0, 0, 0.25);
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: auto;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: none;
+    }
   }
 
   &__contacts-tel {
@@ -60,6 +82,11 @@
     align-items: center;
     width: 100%;
     margin-bottom: 15px;
+
+    @media (min-width: $screen-md) {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
   }
 
   &__tel-link {
@@ -97,6 +124,11 @@
         animation: rotate-light 0.3s ease-in-out infinite both;
       }
     }
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      padding-left: 40px;
+    }
   }
 
   &__callback-icon {
@@ -115,6 +147,10 @@
     margin: 0;
     color: currentColor;
     text-decoration: inherit;
+
+    @media (min-width: $screen-md) {
+      white-space: nowrap;
+    }
   }
 
   &__navigation {
@@ -127,5 +163,9 @@
     align-items: center;
     padding: 20px;
     box-shadow: $shadow-btn;
+
+    @media (min-width: $screen-lg) {
+      justify-content: flex-end;
+    }
   }
 }

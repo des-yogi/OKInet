@@ -16,22 +16,6 @@
     padding: 15px 20px 0 20px;
     list-style: none;
 
-    // мобильный вид списка
-    @media (max-width: ($menu-desktop-width - 1)) {
-
-      // открытие/закрытие меню только в случае работающего JS
-
-      .js & {
-        // overflow: hidden;
-        // max-height: 0;
-        // transition: max-height 0.2s;
-      }
-
-      .js #{$block-name}--open & {
-        // max-height: 100vh;
-        // transition: max-height 0.6s;
-      }
-    }
 
     // настольный вид списка
     @media (min-width: $menu-desktop-width) {
@@ -52,6 +36,21 @@
         color: $main-color;
       }
     }
+
+    &:last-child {
+      @media (min-width: $screen-lg) {
+        //margin-right: auto;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      width: calc(33.33% - 15px);
+    }
+
+    @media (min-width: $screen-lg) {
+      //width: calc(11% - 15px);
+      width: auto;
+    }
   }
 
   &__link {
@@ -68,6 +67,11 @@
       color: $main-color;
       background-color: $white;
       //background-color: aquamarine;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 }

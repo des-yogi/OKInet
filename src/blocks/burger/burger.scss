@@ -8,6 +8,12 @@
   border: none;
   cursor: pointer;
   box-shadow: $shadow-btn;
+
+  @media (min-width: $screen-md) {
+    margin-right: 20px;
+    margin-left: 25px;
+    order: 2;
+  }
 }
 .hamburger, .cross {
   position: absolute;

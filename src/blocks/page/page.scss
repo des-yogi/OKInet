@@ -145,11 +145,21 @@ img {
     padding-right: calc(50% - #{$half-screen-xl});
   }
 
-  &--cropped {
+  &--slider {
     padding-left: 0;
     padding-right: 0;
 
+    @media (min-width: $screen-sm) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     @media (min-width: $screen-md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @media (min-width: $screen-lg) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -169,8 +179,8 @@ img {
   @include row();
 
   &--slider {
-    margin-left: -20px;
-    margin-right: -20px;
+    // margin-left: -20px;
+    // margin-right: -20px;
 /*
     @media (min-width: $screen-md) {
       margin-left: -10px !important;
