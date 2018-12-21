@@ -124,29 +124,13 @@ img {
   }
 }
 
-/* @mixin full-container (
-  $xs-pmin,
-  $sm-pmin,
-  $md-pmin,
-  $lg-pmin,
-  $xl-pmin,
-  $xxl-pmin
-) {
-  display: block;
-  width: 100%;
-  min-height: 200px;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: yellow;
-} */
-
 .container {
   display: block;
   width: 100%;
-  min-height: 200px;
+  min-height: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: yellow;
+  background: none;
 
   @media (min-width: $screen-md) {
     padding-left: 20px;
@@ -160,18 +144,39 @@ img {
     padding-left: calc(50% - #{$half-screen-xl});
     padding-right: calc(50% - #{$half-screen-xl});
   }
+
+  &--cropped {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: $screen-md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      $padding-min: 140px; // нужный отступ от края экрана
+      $half-screen-xl: $screen-xl / 2 - $padding-min;
+      // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
+      padding-left: calc(50% - #{$half-screen-xl});
+      padding-right: calc(50% - #{$half-screen-xl});
+    }
+  }
 }
 
 .row {
-  min-height: 100px;
+  min-height: 10px;
   @include row();
-}
 
-.col {
-  margin-bottom: 20px;
-  @include col(xs,12);
-  @include col(md,6);
-  @include col(lg,4);
+  &--slider {
+    margin-left: -20px;
+    margin-right: -20px;
+/*
+    @media (min-width: $screen-md) {
+      margin-left: -10px !important;
+      margin-right: -10px !important;
+    } */
+  }
 }
 
 .content {

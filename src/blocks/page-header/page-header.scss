@@ -59,13 +59,18 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   &__tel-link {
     display: block;
     font-size: 0.875rem;
+    font-weight: 700;
     color: $text-color;
+
+    @media (min-width: $screen-xl) {
+      font-weight: 500;
+    }
   }
 
   @keyframes rotate-light {
@@ -83,7 +88,7 @@
   &__contacts-callback {
     display: inline-block;
     vertical-align: middle;
-    padding: 5px 10px;
+    padding: 0 10px;
 
     &:hover,
     &:active,
@@ -117,6 +122,10 @@
   }
 
   &__lang {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: $shadow-btn;
   }
 }

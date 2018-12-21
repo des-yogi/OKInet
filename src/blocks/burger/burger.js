@@ -1,8 +1,8 @@
 $(document).ready(function(){
-  $('#main-nav').hide();
+  $('.page-header__navigation').hide();
   $('.menu-toggle').on('click', function() {
     $('.menu-toggle').toggleClass('active').attr('area-pressed', 'true');
-    $('#main-nav').animate({
+    $('.page-header__navigation').animate({
       height: 'toggle'
       }, {
       duration: 300,
@@ -14,7 +14,7 @@ $(document).ready(function(){
   });
   $('.menu-toggle').on('keypress', function() {
     $('.menu-toggle').toggleClass('active').attr('area-pressed', 'true');
-    $('#main-nav').animate({
+    $('.page-header__navigation').animate({
       height: 'toggle'
       }, {
       duration: 300,

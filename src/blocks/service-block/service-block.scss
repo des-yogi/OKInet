@@ -1,9 +1,72 @@
-// В этом файле должны быть стили для БЭМ-блока service-block, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .service-block {
+  // flex-basis: 1 1 100%;
+  text-align: center;
+  border-top: 4px solid $main-dark-color;
 
   $block-name:                &; // #{$block-name}__element
 
+  .col {
+    margin-bottom: 20px;
+    @include col(xs,12);
+    @include col(md,4);
+  }
+
+  &__item {
+    height: 100%;
+    background-color: $white;
+    box-shadow: $shadow-block;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__img-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    position: relative;
+    flex: 1 1;
+    padding: 25px;
+
+    h3 {
+      margin: 0;
+      color: currenColor;
+    }
+
+    &::after {
+      @include top-right-triangle($second-color, 0, 0);
+    }
+  }
+}
+
+.service-block__link:hover,
+.service-block__link:focus {
+
+  .service-block__content {
+    background-color: $second-color;
+
+    &::after {
+      @include top-right-triangle($white, 0, 0);
+    }
+  }
+
+  h3 {
+    color: $white;
+  }
 }

@@ -38,7 +38,7 @@ body {
   line-height: $line-height;
   text-rendering: optimizeLegibility;
   color: $text-color;
-  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
 
   @media (min-width: $screen-xl) {
     font-size: 18px;
@@ -61,6 +61,7 @@ h6 {
   font-weight: 700;
   line-height: $line-height;
   color: $text-color;
+  text-align: center;
 }
 
 .h1,
@@ -91,6 +92,22 @@ h1 {
 .h2,
 h2 {
   font-size: $font-size--h2;
+
+  &--banner {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 60px;
+    margin-bottom: 35px;
+    color: $white;
+    // background-color: $main-color;
+    background-image: svg-load('../img/left-corner.svg', fill=$main-dark-color),
+                      svg-load('../img/right-corner.svg', fill=$main-dark-color),
+                      linear-gradient(to right, transparent, transparent 17px, $main-color 17px, $main-color calc(100% - 17px), transparent calc(100% - 17px));
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center, right center;
+
+  }
 }
 
 .h3,
@@ -188,7 +205,7 @@ a {
   line-height: inherit;
   text-decoration: none;
   color: $second-color;
-  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
 
   &:hover,
   &:active,
