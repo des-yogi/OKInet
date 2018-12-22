@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.page-header__navigation').hide();
+  // $('.page-header__navigation').hide();
   $('.menu-toggle').on('click', function() {
     $('.menu-toggle').toggleClass('active').attr('area-pressed', 'true');
     $('.page-header__navigation').animate({

@@ -1,7 +1,7 @@
 var mainSwiper = new Swiper('.main-slider', {
     speed: 400,
     slidesPerView: 1,
-    spaceBetween: 20,
+    spaceBetween: 0,
     centeredSlides: true,
     grabCursor: true,
     loop: true,

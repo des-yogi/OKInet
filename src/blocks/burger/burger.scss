@@ -14,6 +14,9 @@
     margin-left: 25px;
     order: 2;
   }
+  @media (min-width: $screen-xl) {
+    display: none;
+  }
 }
 .hamburger, .cross {
   position: absolute;

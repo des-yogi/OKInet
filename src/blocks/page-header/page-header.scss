@@ -13,6 +13,16 @@
       z-index: 5;
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
     }
+
+    @media (min-width: $screen-xl) {
+      justify-content: flex-start;
+      $padding-min: 40px; // нужный отступ от края экрана
+      $half-screen-xl: $screen-xl / 2 - $padding-min;
+      // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
+      padding-left: calc(50% - #{$half-screen-xl});
+      padding-right: calc(50% - #{$half-screen-xl});
+      padding-bottom: 10px;
+    }
   }
 
   &__user {
@@ -37,11 +47,28 @@
     &:focus {
       color: $white;
       background-color: $main-color;
+      text-decoration: none;
+
+      @media (min-width: $screen-xl) {
+        color: $main-color;
+        background-color: transparent;
+
+        span {
+          color: currentColor;
+        }
+      }
     }
 
     @media (min-width: $screen-md) {
       margin-left: 0;
       order: 1;
+    }
+
+    @media (min-width: $screen-xl) {
+      justify-content: flex-start;
+      width: auto;
+      margin-left: 40px;
+      box-shadow: none;
     }
   }
 
@@ -52,6 +79,10 @@
       display: inline-block;
       vertical-align: middle;
       margin-left: 15px;
+      white-space: nowrap;
+      font-weight: 700;
+      color: $text-color;
+      transition: all 0.3s ease-out;
     }
   }
 
@@ -73,6 +104,11 @@
       margin-left: auto;
       margin-right: auto;
       box-shadow: none;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: 40px;
+      margin-right: 0;
     }
   }
 
@@ -127,7 +163,12 @@
 
     @media (min-width: $screen-md) {
       display: flex;
-      padding-left: 40px;
+      padding-left: 0;
+      margin-left: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: 40px;
     }
   }
 
@@ -154,7 +195,19 @@
   }
 
   &__navigation {
+    display: none;
 
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      $padding-min: 40px; // нужный отступ от края экрана
+      $half-screen-xl: $screen-xl / 2 - $padding-min;
+      // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
+      padding-left: calc(50% - #{$half-screen-xl});
+      padding-right: calc(50% - #{$half-screen-xl});
+      box-shadow: $shadow-btn;
+    }
   }
 
   &__lang {
@@ -167,5 +220,12 @@
     @media (min-width: $screen-lg) {
       justify-content: flex-end;
     }
+
+    @media (min-width: $screen-xl) {
+      position: relative;
+      z-index: 1;
+      padding: 0;
+    }
   }
 }
+

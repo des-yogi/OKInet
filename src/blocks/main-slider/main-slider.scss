@@ -1,5 +1,6 @@
 .slider-col {
   @include col(xs,12);
+  padding: 0;
   @include col-offset(xl,1);
   @include col(xl,10);
 }
@@ -35,6 +36,11 @@
 
     @media (min-width: $screen-md) {
       padding: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
   }
 

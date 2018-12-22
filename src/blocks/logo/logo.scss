@@ -18,5 +18,20 @@
     @media (min-width: $screen-md) {
       margin-left: 20px;
     }
+
+    @media (min-width: $screen-xl) {
+      margin: 0;
+    }
+  }
+
+  &--footer {
+
+    @media (min-width: 576px) {
+      margin-right: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-right: 90px;
+    }
   }
 }

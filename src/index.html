@@ -14,7 +14,7 @@
     <div class="page__content">
       @@include('blocks/page-header/page-header.html')
 
-      <main role="main">
+      <main class="main-content" role="main">
         <h1 class="visually-hidden">Главная страница интернет-провайдера OKinet™</h1>
 
         <div class="container  container--slider">
@@ -235,7 +235,7 @@
               </article>
 
             </div>
-            <div class="main-slider__control-wrapper">
+            <div class="main-slider__control-wrapper  news-block__control-wrapper">
               <div class="main-slider__btn  main-slider__btn--prev  swiper-button-prev"></div>
               <a class="news-block__all-links" href=""><span>Все новости</span></a>
               <div class="main-slider__btn  main-slider__btn--next  swiper-button-next"></div>
@@ -243,19 +243,23 @@
           </div>
         </div>
 
-        <div class="container">
-          <section class="map-block">
-            <h2 class="h2  h2--banner">Покриття</h2>
-            <div class="map-block__options">
-              <span class="map-block__options-item">
-                <img src="img/address-active.svg" alt="Підключення доступно" width="32" height="32"> Підключення доступно
-              </span>
-              <span class="map-block__options-item">
-                <img src="img/address-estimated.svg" alt="Йде будівництво мережі" width="32" height="32"> Йде будівництво мережі
-              </span>
+        <div class="container  container--map">
+          <div class="row">
+            <div class="coll-map">
+              <section class="map-block">
+                <h2 class="h2  h2--banner">Покриття</h2>
+                <div class="map-block__options">
+                  <span class="map-block__options-item">
+                    <img src="img/address-active.svg" alt="Підключення доступно" width="32" height="32"> <span>Підключення доступно</span>
+                  </span>
+                  <span class="map-block__options-item">
+                    <img src="img/address-estimated.svg" alt="Йде будівництво мережі" width="32" height="32"> <span>Йде будівництво мережі</span>
+                  </span>
+                </div>
+                <div class="map-block__map" id="map-main">Карта тут</div>
+              </section>
             </div>
-            <div class="map-block__map" id="map-main">Карта тут</div>
-          </section>
+          </div>
         </div>
 
       </main>

@@ -20,6 +20,14 @@
     &.active {
       color: $main-color;
     }
+
+    &:not(.active) {
+
+      @media (min-width: $screen-xl) {
+        display: none;
+      }
+    }
+
   }
 
   &__link {

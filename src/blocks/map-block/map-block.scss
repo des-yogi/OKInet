@@ -1,9 +1,84 @@
-// В этом файле должны быть стили для БЭМ-блока map-block, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+.coll-map {
+  @include col(xs,12);
+}
 
 .map-block {
+  text-align: center;
+
+  @media (min-width: $screen-md) {
+    border-top: 4px solid $main-dark-color;
+    box-shadow: $shadow-block;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 40px;
+      padding-right: 5px;
+    }
+  }
+
+  &__options-item {
+    flex-basis: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-right: 40px;
+    font-size: 20px;
+    font-weight: 500;
+
+    img {
+      display: block;
+      width: 32px;
+      height: 32px;
+      margin-right: 20px;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+
+    &:first-child {
+
+      @media (min-width: $screen-md) {
+        margin-right: 80px;
+      }
+    }
+  }
+
+  &__map {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+
+    &:after {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: -10px;
+      right: -10px;
+      content: "";
+      display: block;
+      width: calc(100% + 20px);
+      height: 100%;
+      background: url(../img/map-static.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      box-shadow: $shadow-block;
+
+      @media (min-width: $screen-md) {
+        box-shadow: none;
+        left: 0;
+        right: 0;
+        width: 100%;
+      }
+    }
+  }
 }

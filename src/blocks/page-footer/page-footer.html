@@ -1,12 +1,8 @@
-<!--DEV
-@ @include('blocks/page-footer/page-footer.html')
--->
-
 <footer class="page-footer" role="contentinfo">
 
   <div class="row">
     <!-- Моб + планшет - контейнер, десктоп - колонка -->
-    <section class="page-footer__menu">
+    <section class="page-footer__navigation">
       <ul class="page-footer__nav" role="menu">
         <li class="page-footer__nav-item" role="menuitem">
           <a class="page-footer__nav-link" href="">Новини</a>
@@ -36,26 +32,33 @@
           <a class="page-footer__nav-link" href="">Контакти</a>
         </li>
       </ul>
-      <a href="/" class="logo  logo--footer" title="Okinet интернет-провайдер">
-        <img src="img/okinet-logo-white.svg" alt="Okinet logo" width="88" height="42">
-      </a>
-      <button class="call-now-btn  call-now-btn--footer" type="button">Підключитись</button>
+      <div class="page-footer__logo-wrapper">
+        <a href="/" class="logo  logo--footer" title="Okinet интернет-провайдер">
+          <img src="img/okinet-logo-white.svg" alt="Okinet logo" width="88" height="42">
+        </a>
+        <button class="call-now-btn  call-now-btn--footer" type="button">Підключитись</button>
+      </div>
     </section>
 
     <section class="page-footer__contacts">
       <ul class="page-footer__contacts-list">
         <li class="page-footer__contacts-item">
-          <span>м. Київ, вул. Металістів 11А, <br>офіс. 1, м. Шулявська</span>
+          <span class="page-footer__contacts-link  page-footer__contacts-link--address" title="Адреса компанії OKinet">
+            <span></span>м. Київ, вул. Металістів 11А, <br>офіс. 1, м. Шулявська</span>
         </li>
         <li class="page-footer__contacts-item">
-          <span>Пн-Сб: 9.00 — 21.00 <br>Вс: Выходной</span>
+          <span class="page-footer__contacts-link  page-footer__contacts-link--time"  title="Робочий час компанії OKinet">
+            <span></span>Пн&thinsp;-&thinsp;Сб:&ensp;9.00 — 21.00 <br>Вс:&ensp;Выходной</span>
         </li>
         <li class="page-footer__contacts-item">
-          <a href="tel:+380443000062" title="Телефон компанії OKinet міський">+38 (044) 300-00-62</a><br>
-          <a href="tel:+380630731643" title="Телефон компанії OKinet мобільний">+38 (063) 073-16-43</a>
+          <a class="page-footer__contacts-link  page-footer__contacts-link--tel" href="tel:+380443000062" title="Телефон компанії OKinet міський">
+          <span></span>+38 (044) 300-00-62</a>
+          <a class="page-footer__contacts-link" href="tel:+380630731643" title="Телефон компанії OKinet мобільний">
+            <span style="background:none;"></span>+38 (063) 073-16-43</a>
         </li>
         <li class="page-footer__contacts-item">
-          <a href="mailto:support@okinet.com.ua" title="Email компанії OKinet">support@okinet.com.ua</a>
+          <a class="page-footer__contacts-link  page-footer__contacts-link--mail" href="mailto:support@okinet.com.ua" title="Email компанії OKinet">
+          <span></span>support@okinet.com.ua</a>
         </li>
         <li class="page-footer__contacts-item  page-footer__contacts-item--social">
           <a class="page-footer__social-link  page-footer__social-link--fb" href="" title="Cторінка компанії Okinet на Facebook">
@@ -75,10 +78,10 @@
     </section>
 
     <section class="copyrights">
-      <span class="copyrights__owner">© Интернет-провайдер «OKINet». Все права защищены.</span>
-      <span class="copyrights__developer" area-label="Компания разработчик — IT-Doors Outsourcing">
-        <img src="img/it-doors-logo.svg" alt="IT-Doors Outsourcing logo" width="75" height="33">
-      </span>
+      <span class="copyrights__owner">©&thinsp;2018&nbsp;Интернет-провайдер&nbsp;«OKINet». &shy;Все права защищены.</span>
+      <a class="copyrights__developer" href="https://it-doors.com" area-label="Компания разработчик — IT-Doors Outsourcing" target="_blank" rel="nofollow noopener" title="Компания разработчик — IT-Doors Outsourcing">
+        <img src="img/itdoors-logo.svg" alt="IT-Doors Outsourcing logo" width="87" height="32">
+      </a>
     </section>
   </div>
 
