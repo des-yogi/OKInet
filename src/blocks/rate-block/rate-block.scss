@@ -1,9 +1,185 @@
-// В этом файле должны быть стили для БЭМ-блока rate-block, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .rate-block {
+  padding-bottom: 50px;
+  background-color: #090928; // very dark blue
+  background-image: url(../img/rate-bg-mobile@1x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top: 4px solid $main-dark-color;
+  text-align: center;
+
+  @media (min-width: $screen-md) {
+    background-image: url(../img/rate-bg-tablet@1x.jpg);
+  }
+
+  @media (min-width: $screen-xl) {
+    background-image: url(../img/rate-bg-desktop@1x.jpg);
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  .col {
+    margin-bottom: 20px;
+    @include col(xs,12);
+    @include col(md,4);
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $white;
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: 5;
+      top: -3px;
+      right: -3px;
+      content: "";
+      display: block;
+      width: 66px;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      color: $white;
+    }
+
+    &--action {
+
+      button {
+        background-color: $main-color;
+        border-color: $main-color;
+      }
+
+      &::before {
+        height: 66px;
+        background-image: linear-gradient(45deg, transparent, transparent 50%, $main-color 50%, $main-color);
+        filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.35));
+      }
+
+      &::after {
+        z-index: 10;
+        content: "Акція";
+        height: 20px;
+        transform: translate(10px, 13px) rotate(45deg);
+      }
+    }
+
+    &--top {
+
+      button {
+        background-color: $third-color;
+        border-color: $third-color;
+      }
+
+      &::before {
+        height: 66px;
+        background-image: linear-gradient(45deg, transparent, transparent 50%, $third-color 50%, $third-color);
+        filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.25));
+      }
+
+      &::after {
+        z-index: 10;
+        content: "ТОП";
+        height: 20px;
+        transform: translate(10px, 13px) rotate(45deg);
+      }
+    }
+  }
+
+  &__title {
+    padding: 0 15px;
+    margin-top: 25px;
+    margin-bottom: 17px;
+    color: $second-color;
+  }
+
+  &__price {
+    padding: 0 15px;
+    margin-top: 0;
+    margin-bottom: 22px;
+  }
+
+  &__old-price {
+    font-size: smaller;
+    color: $text-muted;
+    text-decoration: line-through;
+  }
+
+  &__now-price {
+    color: $main-color;
+  }
+
+  &__options {
+    flex: 1 1;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0 15px;
+    list-style-type: none;
+  }
+
+  &__list-item {
+    margin-bottom: 23px;
+
+    span {
+      display: block;
+
+      &:first-child {
+        position: relative;
+        margin-bottom: 30px;
+
+        &::after {
+          position: absolute;
+          bottom: -14px;
+          left: 0;
+          content: "";
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: $text-muted;
+        }
+      }
+    }
+  }
+
+  &__order-btn {
+    position: relative;
+    padding: 10px 25px 9px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    color: $white;
+    background-color: $second-color;
+    border: 3px solid $second-color;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease-out;
+
+    &:hover,
+    &:focus {
+      color: $second-color;
+      border-color: $second-color;
+      background-color: $white;
+      outline: none;
+    }
+
+    &::after {
+      position: absolute;
+      z-index: 5;
+      top: -3px;
+      right: -3px;
+      content: "";
+      display: block;
+      width: 26px;
+      height: 26px;
+      background: linear-gradient(45deg, transparent, transparent 50%, $second-color 50%, $second-color);
+      filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.25));
+    }
+  }
 }
+

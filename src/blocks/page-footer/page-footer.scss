@@ -1,8 +1,295 @@
-// В этом файле должны быть стили для БЭМ-блока page-footer, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-footer {
+  padding-bottom: 20px;
+  color: $white;
+  background-color: $footer-med-bg;
+
+  @media (min-width: $screen-xl) {
+    $padding-min: 40px; // нужный отступ от края экрана
+    $half-screen-xl: $screen-xl / 2 - $padding-min;
+    // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
+    padding-left: calc(50% - #{$half-screen-xl});
+    padding-right: calc(50% - #{$half-screen-xl});
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: linear-gradient(to right, $footer-dark-bg, $footer-dark-bg 50%, $footer-med-bg 50%);
+  }
 
   $block-name:                &; // #{$block-name}__element
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+
+    @media (min-width: $screen-xl) {
+      position: relative;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+
+  &__nav,
+  &__contacts-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__navigation {
+    padding-top: 25px;
+    padding-bottom: 35px;
+    background-color: $footer-dark-bg;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include col(xl,5);
+
+    @media (min-width: $screen-xl) {
+      padding-left: 10px;
+      padding-right: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    @media (min-width: $screen-md) {
+      flex: 1 1;
+      margin-right: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-basis: 100%;
+      margin-bottom: auto;
+    }
+  }
+
+  &__nav-item {
+    @include col(xs,4);
+    @include col(xl,5);
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  &__nav-link,
+  &__contacts-link,
+  &__social-link {
+    display: block;
+    font-size: 18px;
+    color: inherit;
+  }
+
+  &__navigation,
+  &__contacts {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 40px;
+      padding-bottom: 70px;
+    }
+  }
+
+  &__nav-link {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+
+    @media (min-width: $screen-xl) {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+    }
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 576px) {
+      justify-content: flex-start;
+    }
+
+    @media (min-width: $screen-md) {
+      width: 328px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: auto;
+    }
+  }
+
+  &__contacts {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    background-color: $footer-med-bg;
+
+    @include col(xl,7);
+
+    @media (min-width: $screen-xl) {
+      padding-right: 10px;
+      padding-left: 20px;
+    }
+  }
+
+  &__contacts-list {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $screen-md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: $screen-xl) {
+      justify-content: space-between;
+    }
+  }
+
+  &__contacts-item {
+    margin-bottom: 25px;
+    font-size: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(odd) {
+
+      @media (min-width: $screen-xl) {
+        width: calc(55% - 10px);
+      }
+    }
+
+    &:nth-child(even) {
+
+      @media (min-width: $screen-xl) {
+        width: calc(45% - 10px);
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      width: calc(50% - 10px);
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 32px;
+    }
+
+    &--social {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &__contacts-link {
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+
+      span {
+        background-color: $white;
+      }
+    }
+
+    span {
+      display: block;
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+      background-color: rgba(0, 0, 0, 0.15);
+      background-image: svg-load('../img/pin-icon.svg', fill=$main-color);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: initial;
+      border-radius: 1px;
+
+      @media (min-width: $screen-md) {
+        margin-right: 20px;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+
+    }
+
+    &--time {
+
+      span {
+        background-image: svg-load('../img/time-icon.svg', fill=$main-color);
+      }
+    }
+
+    &--tel {
+
+      &:first-child {
+        margin-bottom: 5px;
+      }
+
+      span {
+        background-image: svg-load('../img/tel-icon.svg', fill=$main-color);
+      }
+    }
+
+    &--mail {
+
+      span {
+        background-image: svg-load('../img/mail-icon.svg', fill=$main-color);
+      }
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 25px;
+
+    &:hover,
+    &:focus {
+
+      span {
+        background-color: $white;
+      }
+    }
+
+    span {
+      display: block;
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+      background-color: rgba(0, 0, 0, 0.15);
+      background-image: svg-load('../img/pin-icon.svg', fill=$main-color);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: initial;
+      border-radius: 1px;
+
+      @media (min-width: $screen-md) {
+        margin-right: 20px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin-right: 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-right: 50px;
+    }
+  }
 }

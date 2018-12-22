@@ -3,10 +3,26 @@
   $block-name:                &; // #{$block-name}__element
 
   &__top {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 10px;
+
+    @media (min-width: $screen-md) {
+      z-index: 5;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (min-width: $screen-xl) {
+      justify-content: flex-start;
+      $padding-min: 40px; // нужный отступ от края экрана
+      $half-screen-xl: $screen-xl / 2 - $padding-min;
+      // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
+      padding-left: calc(50% - #{$half-screen-xl});
+      padding-right: calc(50% - #{$half-screen-xl});
+      padding-bottom: 10px;
+    }
   }
 
   &__user {
@@ -31,6 +47,28 @@
     &:focus {
       color: $white;
       background-color: $main-color;
+      text-decoration: none;
+
+      @media (min-width: $screen-xl) {
+        color: $main-color;
+        background-color: transparent;
+
+        span {
+          color: currentColor;
+        }
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      margin-left: 0;
+      order: 1;
+    }
+
+    @media (min-width: $screen-xl) {
+      justify-content: flex-start;
+      width: auto;
+      margin-left: 40px;
+      box-shadow: none;
     }
   }
 
@@ -41,6 +79,10 @@
       display: inline-block;
       vertical-align: middle;
       margin-left: 15px;
+      white-space: nowrap;
+      font-weight: 700;
+      color: $text-color;
+      transition: all 0.3s ease-out;
     }
   }
 
@@ -52,6 +94,22 @@
     padding-right: 10px;
     text-align: center;
     box-shadow: inset 0 3px 5px -1.5px rgba(0, 0, 0, 0.25);
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: auto;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: none;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: 40px;
+      margin-right: 0;
+    }
   }
 
   &__contacts-tel {
@@ -59,13 +117,23 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+
+    @media (min-width: $screen-md) {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
   }
 
   &__tel-link {
     display: block;
     font-size: 0.875rem;
+    font-weight: 700;
     color: $text-color;
+
+    @media (min-width: $screen-xl) {
+      font-weight: 500;
+    }
   }
 
   @keyframes rotate-light {
@@ -83,7 +151,7 @@
   &__contacts-callback {
     display: inline-block;
     vertical-align: middle;
-    padding: 5px 10px;
+    padding: 0 10px;
 
     &:hover,
     &:active,
@@ -91,6 +159,16 @@
       svg {
         animation: rotate-light 0.3s ease-in-out infinite both;
       }
+    }
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      padding-left: 0;
+      margin-left: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: 40px;
     }
   }
 
@@ -110,13 +188,44 @@
     margin: 0;
     color: currentColor;
     text-decoration: inherit;
+
+    @media (min-width: $screen-md) {
+      white-space: nowrap;
+    }
   }
 
   &__navigation {
+    display: none;
 
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      $padding-min: 40px; // нужный отступ от края экрана
+      $half-screen-xl: $screen-xl / 2 - $padding-min;
+      // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
+      padding-left: calc(50% - #{$half-screen-xl});
+      padding-right: calc(50% - #{$half-screen-xl});
+      box-shadow: $shadow-btn;
+    }
   }
 
   &__lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: $shadow-btn;
 
+    @media (min-width: $screen-lg) {
+      justify-content: flex-end;
+    }
+
+    @media (min-width: $screen-xl) {
+      position: relative;
+      z-index: 1;
+      padding: 0;
+    }
   }
 }
+

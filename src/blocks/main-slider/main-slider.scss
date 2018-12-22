@@ -1,9 +1,102 @@
-// В этом файле должны быть стили для БЭМ-блока main-slider, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+.slider-col {
+  @include col(xs,12);
+  padding: 0;
+  @include col-offset(xl,1);
+  @include col(xl,10);
+}
 
 .main-slider {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__item {
+
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__control-wrapper {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+
+    @media (min-width: $screen-md) {
+      padding: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__btn {
+    position: static;
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+    background-position: center;
+    background-size: 12px 24px;
+    box-shadow: $shadow-btn;
+    transition: all 0.2s ease-out;
+
+    &--prev {
+      background-image: svg-load('../img/left-arrow.svg', fill=$second-color);
+
+      &:hover,
+      &:focus {
+        background-color: $second-color;
+        background-image: svg-load('../img/left-arrow.svg', fill=$white);
+      }
+    }
+
+    &--next {
+      background-image: svg-load('../img/right-arrow.svg', fill=$second-color);
+
+      &:hover,
+      &:focus {
+        background-color: $second-color;
+        background-image: svg-load('../img/right-arrow.svg', fill=$white);
+      }
+    }
+  }
+
+  &__pagination {
+    position: static;
+    box-sizing: border-box;
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      margin-right: 20px;
+      box-sizing: inherit;
+      border: 2px solid $second-color;
+      background-color: $white;
+      border-radius: 0;
+      opacity: 1;
+      box-shadow: 0 0 0 2px $white, 1px 1px 6px 3px rgba(0, 0, 0, 0.25);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $second-color;
+    }
+  }
 }

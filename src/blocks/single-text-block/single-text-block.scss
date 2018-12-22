@@ -1,9 +1,26 @@
-// В этом файле должны быть стили для БЭМ-блока single-text-block, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .single-text-block {
 
   $block-name:                &; // #{$block-name}__element
 
+  .col {
+    @include col(xs,12);
+  }
+
+  &__content {
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      font-weight: 700;
+    }
+  }
 }
