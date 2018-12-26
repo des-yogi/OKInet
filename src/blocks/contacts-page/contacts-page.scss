@@ -1,9 +1,40 @@
-// В этом файле должны быть стили для БЭМ-блока contacts-page, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .contacts-page {
+  text-align: center;
+  border-top: 4px solid $main-dark-color;
 
   $block-name:                &; // #{$block-name}__element
 
+  .col-text,
+  .col-map {
+    @include col(xs,12);
+    @include col-offset(md,1);
+    @include col(md,10);
+    @include col-offset(xl,0);
+    @include col(xl,6);
+  }
+
+  .page-footer__contacts {
+    text-align: left;
+    background-color: transparent;
+  }
+
+  .page-footer__contacts-link > span,
+  .page-footer__social-link > span {
+    background-color: transparent;
+  }
+
+  .map-block {
+    border-top: none;
+  }
+
+  .map-block__map {
+    height: 320px;
+    overflow: hidden;
+
+    @media (min-width: $screen-md) {
+      height: 475px;
+    }
+
+    @media (min-width: $screen-xl) {}
+  }
 }

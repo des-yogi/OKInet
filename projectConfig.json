@@ -46,7 +46,8 @@
     "contacts-page": [],
     "partners-block": [],
     "copyrights": [],
-    "call-now-btn": []
+    "call-now-btn": [],
+    "pagination": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

@@ -53,6 +53,15 @@
       @include top-right-triangle($second-color, 0, 0);
     }
   }
+
+  &--page {
+
+    .col {
+      @include col(xs,12);
+      @include col(md,6);
+      @include col(lg,4);
+    }
+  }
 }
 
 .service-block__link:hover,
