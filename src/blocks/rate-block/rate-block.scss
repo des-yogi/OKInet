@@ -22,6 +22,65 @@
     margin-bottom: 20px;
     @include col(xs,12);
     @include col(md,4);
+
+    &--info-text {
+      margin-top: 20px;
+      margin-bottom: 0;
+      @include col(xs,12);
+      @include col(sm,12);
+      @include col(md,12);
+      @include col-offset(lg,1);
+      @include col(lg,10);
+    }
+  }
+
+  &__col-switcher {
+    margin-bottom: 35px;
+    @include col(xs,12);
+    @include col-offset(xl,1);
+    @include col(xl,10);
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      width: 50%;
+    }
+  }
+
+  &__rates-switch {
+    display: block;
+    width: 100%;
+    padding: 10px 50px;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    background-color: $white;
+    box-shadow: $shadow-block;
+    user-select: none;
+    cursor: pointer;
+
+    &.active {
+      text-decoration: none;
+      color: $white;
+      background-color: $second-color;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $white;
+      background-color: $second-color;
+    }
+  }
+
+  &--rates-page {
+
+    @media (min-width: $screen-md) {
+      padding-bottom: 70px;
+    }
   }
 
   &__item {
@@ -144,6 +203,14 @@
         }
       }
     }
+
+    &--office {
+      font-weight: 700;
+    }
+
+    &--highlighted {
+      color: $main-color;
+    }
   }
 
   &__order-btn {
@@ -179,6 +246,26 @@
       height: 26px;
       background: linear-gradient(45deg, transparent, transparent 50%, $second-color 50%, $second-color);
       filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    &--office {
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__info-text {
+    padding: 1px 20px;
+    font-weight: 500;
+    font-size: larger;
+    color: inherit;
+    background-color: $white;
+
+    span {
+      font-weight: 700;
+      color: $main-color;
     }
   }
 }

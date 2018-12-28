@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <title>Rates page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main-content  main-content--rates" role="main">
+
+        <div class="container  rate-block  rate-block--rates-page">
+          <h2 class="h2  h2--banner">Пакети тарифів</h2>
+
+          <div class="row">
+            <div class="rate-block__col-switcher">
+              <a class="h3  rate-block__rates-switch  active">Тарифи для дому</a>
+              <a href="rates-office.html" class="h3  rate-block__rates-switch">Тарифи для бізнесу</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <article class="rate-block__item">
+                <h3 class="rate-block__title">Комфорт 50</h3>
+                <section class="h3  rate-block__price">
+                  <span class="rate-block__old-price">150</span>
+                  <span class="rate-block__now-price">90</span>
+                  грн./міс.
+                </section>
+                <section class="rate-block__options">
+                  <ul class="rate-block__list">
+                    <li class="rate-block__list-item">
+                      <span>World — <strong>100 Мбит/сек.</strong></span>
+                      <span>UA-IX — <strong>100 Мбит/сек.</strong></span>
+                    </li>
+                    <li class="rate-block__list-item">
+                      Підключення за 1 грн<br>
+                      <strong>при оплаті за 2 місяці</strong>
+                    </li>
+                  </ul>
+                </section>
+                <button class="rate-block__order-btn" type="button">Замовити</button>
+              </article>
+            </div>
+            <div class="col">
+              <article class="rate-block__item  rate-block__item--action">
+                <h3 class="rate-block__title">Комфорт 100</h3>
+                <section class="h3  rate-block__price">
+                  <span class="rate-block__old-price">150</span>
+                  <span class="rate-block__now-price">90</span>
+                  грн./міс.
+                </section>
+                <section class="rate-block__options">
+                  <ul class="rate-block__list">
+                    <li class="rate-block__list-item">
+                      <span>World — <strong>100 Мбит/сек.</strong></span>
+                      <span>UA-IX — <strong>100 Мбит/сек.</strong></span>
+                    </li>
+                    <li class="rate-block__list-item">
+                      Підключення за 1 грн<br>
+                      <strong>при оплаті за 2 місяці</strong>
+                    </li>
+                  </ul>
+                </section>
+                <button class="rate-block__order-btn" type="button">Замовити</button>
+              </article>
+            </div>
+            <div class="col">
+              <article class="rate-block__item  rate-block__item--top">
+                <h3 class="rate-block__title">Комфорт 150</h3>
+                <section class="h3  rate-block__price">
+                  <span class="rate-block__old-price">150</span>
+                  <span class="rate-block__now-price">90</span>
+                  грн./міс.
+                </section>
+                <section class="rate-block__options">
+                  <ul class="rate-block__list">
+                    <li class="rate-block__list-item">
+                      <span>World — <strong>100 Мбит/сек.</strong></span>
+                      <span>UA-IX — <strong>100 Мбит/сек.</strong></span>
+                    </li>
+                    <li class="rate-block__list-item">
+                      Підключення за 1 грн<br>
+                      <strong>при оплаті за 2 місяці</strong>
+                    </li>
+                  </ul>
+                </section>
+                <button class="rate-block__order-btn" type="button">Замовити</button>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+  <!--
+  вызов модалки
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Модальное окно (демо)
+  </button> -->
+
+  @@include('_include/page_bottom.html')
+
+  @@include('blocks/modal/modal.html')
+</body>
+</html>

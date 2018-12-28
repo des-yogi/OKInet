@@ -86,7 +86,11 @@ h6 {
 
 .h1,
 h1 {
-  font-size: $font-size--h1;
+  font-size: $font-size--h2;
+
+  &--banner {
+    @include banner-caption;
+  }
 }
 
 .h2,
@@ -94,19 +98,8 @@ h2 {
   font-size: $font-size--h2;
 
   &--banner {
-    display: inline-block;
-    vertical-align: top;
-    padding: 10px 60px;
-    margin-bottom: 35px;
-    color: $white;
-    // background-color: $main-color;
-    background-image: svg-load('../img/left-corner.svg', fill=$main-dark-color),
-                      svg-load('../img/right-corner.svg', fill=$main-dark-color),
-                      linear-gradient(to right, transparent, transparent 17px, $main-color 17px, $main-color calc(100% - 17px), transparent calc(100% - 17px));
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left center, right center;
-
+    @include banner-caption;
+    white-space: nowrap;
   }
 }
 

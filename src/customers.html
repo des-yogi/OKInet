@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <title>Customers page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main-content" role="main">
+
+        <div class="container  news-page  customers">
+          <h1 class="h1  h1--banner">Абонентам</h1>
+
+          <div class="row">
+            <div class="col  col--customers-terminal">
+              <article class="customers__terminal">
+                <h2>Оплата послуг в терміналах</h2>
+                <div class="row">
+                  <div class="col customers__col-inner">
+                    <a class="customers__link" href="" title="Оплата послуг в терміналах City24" area-label="Оплата послуг в терміналах City24">
+                      <img src="img/city24-logo.png" alt="city24" width="150" height="150">
+                    </a>
+                  </div>
+                  <div class="col customers__col-inner">
+                    <a class="customers__link" href="" title="Оплата послуг в терміналах TYME" area-label="Оплата послуг в терміналах TYME">
+                      <img src="img/tyme-logo.svg" alt="Tyme" width="117" height="158">
+                    </a>
+                  </div>
+                  <div class="col customers__col-inner  customers__col-inner--full">
+                    <a class="customers__link" href="" title="Оплата послуг в терміналах 24 Non Stop" area-label="Оплата послуг в терміналах 24 Non Stop">
+                      <img src="img/24nonstop.png" alt="24 nonstop" width="187" height="82">
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col  col--customers-online">
+              <article class="customers__online">
+                <h2>Оплата послуг онлайн</h2>
+                <div class="row">
+                  <div class="col customers__col-inner">
+                    <a class="customers__link" href="" title="Оплата послуг онлайн VISA" area-label="Оплата послуг онлайн VISA">
+                      <img src="img/visa-logo.svg" alt="VISA логотип" width="241" height="78">
+                    </a>
+                  </div>
+                  <div class="col customers__col-inner">
+                    <a class="customers__link" href="" title="Оплата послуг онлайн Mastercard" area-label="Оплата послуг онлайн Mastercard">
+                      <img src="img/mastercard-logo.svg" alt="Mastercard логотип" width="192" height="150">
+                    </a>
+                  </div>
+                  <div class="col customers__col-inner">
+                    <a class="customers__link  customers__link--stretched" href="" title="Оплата послуг онлайн Liqpay" area-label="Оплата послуг онлайн Liqpay">
+                      <img src="img/liqpay-p-logo.svg" alt="Liqpay логотип" width="241" height="50">
+                    </a>
+                  </div>
+                  <div class="col customers__col-inner">
+                    <a class="customers__link  customers__link--stretched" href="" title="Оплата послуг онлайн Приват24" area-label="Оплата послуг онлайн Приват24">
+                      <img src="img/privat24-logo.svg" alt="Приват24 логотип" width="226" height="49">
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col  col--customers-text">
+              <article class="customers__bank-details">
+                <h2>Публічний договір компанії ОКинет</h2>
+                <p>Про надання послуг доступу до мережі Інтернет та додаткових послуг на умовах публічної оферти.</p>
+                <p><a href=""><strong>Завантажити</strong></a></p>
+              </article>
+            </div>
+            <div class="col  col--customers-text">
+              <h2 class="visually-hidden">Банківські реквізити компанії ОКинет для оплати через відділення банків</h2>
+              <p class="h2">
+                <a href="">Реквізити для оплати через відділення банків</a>
+              </p>
+              <p class="h4">
+                <a href="">ОТТ</a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+  <!--
+  вызов модалки
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Модальное окно (демо)
+        </button> -->
+
+  @@include('_include/page_bottom.html')
+
+  @@include('blocks/modal/modal.html')
+</body>
+</html>

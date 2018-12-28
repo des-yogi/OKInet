@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <title>Coverage page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main-content" role="main">
+
+        <div class="container   news-page  coverage">
+          <h1 class="h1  h1--banner">Покриття</h1>
+
+          <div class="row">
+
+            <div class="coll-map">
+              <section class="map-block">
+                <div class="map-block__options">
+                  <span class="map-block__options-item">
+                    <img src="img/address-active.svg" alt="Підключення доступно" width="32" height="32"> <span>Підключення доступно</span>
+                  </span>
+                  <span class="map-block__options-item">
+                    <img src="img/address-estimated.svg" alt="Йде будівництво мережі" width="32" height="32"> <span>Йде будівництво мережі</span>
+                  </span>
+                </div>
+                <div class="map-block__map" id="map-main">Карта тут</div>
+              </section>
+            </div>
+
+          </div>
+        </div>
+
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+  <!--
+  вызов модалки
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Модальное окно (демо)
+        </button> -->
+
+  @@include('_include/page_bottom.html')
+
+  @@include('blocks/modal/modal.html')
+</body>
+</html>

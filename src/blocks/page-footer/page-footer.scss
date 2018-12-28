@@ -223,10 +223,6 @@
       }
     }
 
-    @media (min-width: $screen-xl) {
-
-    }
-
     &--time {
 
       span {
@@ -273,7 +269,7 @@
       height: 35px;
       margin-right: 15px;
       background-color: rgba(0, 0, 0, 0.15);
-      background-image: svg-load('../img/pin-icon.svg', fill=$main-color);
+      // background-image: svg-load('../img/pin-icon.svg', fill=$main-color);
       background-repeat: no-repeat;
       background-position: center;
       background-size: initial;
@@ -281,6 +277,27 @@
 
       @media (min-width: $screen-md) {
         margin-right: 20px;
+      }
+    }
+
+    &--fb {
+
+      span {
+        background-image: svg-load('../img/fb-icon.svg', fill=$main-color);
+      }
+    }
+
+    &--tg {
+
+      span {
+        background-image: svg-load('../img/telegram-icon.svg', fill=$main-color);
+      }
+    }
+
+    &--vb {
+
+      span {
+        background-image: svg-load('../img/tel-icon.svg', fill=$main-color);
       }
     }
 

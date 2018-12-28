@@ -3,9 +3,14 @@
   padding: 0;
   @include col-offset(xl,1);
   @include col(xl,10);
+
+  @media (min-width: $screen-xl) {
+    position: relative;
+  }
 }
 
 .main-slider {
+
 
   $block-name:                &; // #{$block-name}__element
 
@@ -39,8 +44,11 @@
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      justify-content: center;
+      padding-top: 17px;
+      padding-bottom: 15px;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -54,8 +62,20 @@
     box-shadow: $shadow-btn;
     transition: all 0.2s ease-out;
 
+    @media (min-width: $screen-xl) {
+      position: absolute;
+      top: 150px;
+      z-index: 2;
+      width: 48px;
+      height: 48px;
+    }
+
     &--prev {
       background-image: svg-load('../img/left-arrow.svg', fill=$second-color);
+
+      @media (min-width: $screen-xl) {
+        transform: translateX(-75px);
+      }
 
       &:hover,
       &:focus {
@@ -66,6 +86,10 @@
 
     &--next {
       background-image: svg-load('../img/right-arrow.svg', fill=$second-color);
+
+      @media (min-width: $screen-xl) {
+        transform: translateX(75px);
+      }
 
       &:hover,
       &:focus {
@@ -93,10 +117,33 @@
       &:last-child {
         margin-right: 0;
       }
+
+      @media (min-width: $screen-xl) {
+        width: 26px;
+        height: 26px;
+        border-width: 3px;
+        box-shadow: 0 0 0 3px $white, 1px 1px 6px 3px rgba(0, 0, 0, 0.25)
+      }
     }
 
     .swiper-pagination-bullet-active {
       background-color: $second-color;
+
+      @media (min-width: $screen-xl) {
+        position: relative;
+        background-color: $white;
+
+        &::before {
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          content: "";
+          display: block;
+          width: 14px;
+          height: 14px;
+          background-color: $second-color;
+        }
+      }
     }
   }
 }

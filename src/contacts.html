@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contacts page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main-content" role="main">
+
+        <div class="container  contacts-page">
+          <h1 class="h1  h1--banner">Контакти</h1>
+
+          <div class="row">
+
+            <div class="col-text">
+              <section class="page-footer__contacts">
+                <ul class="page-footer__contacts-list">
+                  <li class="page-footer__contacts-item">
+                    <span class="page-footer__contacts-link  page-footer__contacts-link--address" title="Адреса компанії OKinet">
+                      <span></span>м. Київ, вул. Металістів 11А, <br>офіс. 1, м. Шулявська</span>
+                  </li>
+                  <li class="page-footer__contacts-item">
+                    <span class="page-footer__contacts-link  page-footer__contacts-link--time"  title="Робочий час компанії OKinet">
+                      <span></span>Пн&thinsp;-&thinsp;Сб:&ensp;9.00 — 21.00 <br>Вс:&ensp;Выходной</span>
+                  </li>
+                  <li class="page-footer__contacts-item">
+                    <a class="page-footer__contacts-link  page-footer__contacts-link--tel" href="tel:+380443000062" title="Телефон компанії OKinet міський">
+                    <span></span>+38 (044) 300-00-62</a>
+                    <a class="page-footer__contacts-link" href="tel:+380630731643" title="Телефон компанії OKinet мобільний">
+                      <span style="background:none;"></span>+38 (063) 073-16-43</a>
+                  </li>
+                  <li class="page-footer__contacts-item">
+                    <a class="page-footer__contacts-link  page-footer__contacts-link--mail" href="mailto:support@okinet.com.ua" title="Email компанії OKinet">
+                    <span></span>support@okinet.com.ua</a>
+                  </li>
+                  <li class="page-footer__contacts-item  page-footer__contacts-item--social">
+                    <a class="page-footer__social-link  page-footer__social-link--fb" href="" title="Cторінка компанії Okinet на Facebook">
+                      <span></span> Facebook
+                    </a>
+                    <a class="page-footer__social-link  page-footer__social-link--tg" href="tg://resolve?domain=nikname" title="Канал компанії Okinet в Telegram">
+                      <span></span> Telegram
+                    </a>
+                    <a class="page-footer__social-link  page-footer__social-link--vb" href="viber://add?number=НОМЕР" title="Контакт компанії Okinet в Viber"> <!-- Для мобильных -->
+                      <span></span> Viber
+                    </a>
+                    <!-- <a class="page-footer__social-link  page-footer__social-link--vb" title="Контакт компанії Okinet в Viber" href="viber://chat?number=+НОМЕР">
+                      <span></span> Viber
+                    </a> Для ПК (прикруить переключение по условию^ ismobile) -->
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="col-map">
+              <section class="map-block">
+                <h2 class="visually-hidden">Адреса офіса OKinet™</h2>
+                <div class="map-block__map" id="map-contacts">Карта тут</div>
+              </section>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+  <!--
+  вызов модалки
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Модальное окно (демо)
+        </button> -->
+
+  @@include('_include/page_bottom.html')
+
+  @@include('blocks/modal/modal.html')
+</body>
+</html>

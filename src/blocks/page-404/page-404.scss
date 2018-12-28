@@ -1,9 +1,149 @@
-// В этом файле должны быть стили для БЭМ-блока page-404, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-404 {
+  padding-top: 40px;
+  background: linear-gradient(261.85deg, $main-dark-color -12.26%, $main-dark-color 118.9%);
+
+  @media (min-width: $screen-md) {
+    padding-top: 50px;
+    background-image:
+                linear-gradient(to right, $main-dark-color, $main-dark-color 55%, transparent 55%, transparent),
+                url(../img/page-404-bg-tablet.svg),
+                linear-gradient(261.85deg, $main-dark-color -12.26%, $main-dark-color 118.9%);
+    background-repeat: repeat-x;
+    background-position: bottom right;
+    background-size: initial;
+  }
+
+  @media (min-width: $screen-lg) {
+    background-image:
+                linear-gradient(to right, $main-dark-color, $main-dark-color 65%, transparent 65%, transparent),
+                url(../img/page-404-bg-tablet.svg),
+                linear-gradient(261.85deg, $main-dark-color -12.26%, $main-dark-color 118.9%);
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 80px;
+    background-image:
+                linear-gradient(to right, $main-dark-color, $main-dark-color 65%, transparent 65%, transparent),
+                url(../img/page-404-bg-desktop.svg),
+                linear-gradient(261.85deg, $main-dark-color -12.26%, $main-dark-color 118.9%);
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__col {
+    @include col(xs,12);
+    @include col(md,5);
+    @include col(xl,4);
+    margin-bottom: 40px;
+  }
+
+  &__col-img {
+    @include col(xs,12);
+    @include col(md,7);
+    @include col(xl,8);
+    padding-right: 0;
+
+    @media (min-width: $screen-xl) {
+      padding-left: 20px;
+    }
+  }
+
+  &__text {
+    text-align: left;
+    color: $white;
+  }
+
+  &__title {
+    position: relative;
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+    text-align: inherit;
+    color: inherit;
+
+    span {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.75px;
+    }
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      display: block;
+      width: 60px;
+      height: 9px;
+      background-color: $white;
+    }
+  }
+
+  &__back-link {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 35px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: inherit;
+    line-height: $line-height;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    white-space: nowrap;
+    user-select: none;
+    color: $text-color;
+    background-color: $white;
+    border-radius: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: currentColor;
+      background-color: $second-color;
+      outline: none;
+    }
+
+    @media (min-width: $screen-md) {
+      max-width: 285px;
+    }
+  }
+
+  &__img-wrapper {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      height: 310px;
+      overflow: hidden;
+    }
+
+    @media (min-width: $screen-xl) {
+      height: 518.4px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: auto;
+
+    @media (min-width: $screen-md) {
+      height: 310px;
+      max-height: 100%;
+      margin-right: auto;
+      margin-top: auto;
+      object-fit: cover;
+      object-position: left bottom;
+    }
+
+    @media (min-width: $screen-xl) {
+      height: 518.4px;
+    }
+  }
 }

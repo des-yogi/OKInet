@@ -1,8 +1,11 @@
-// В этом файле должны быть стили для БЭМ-блока rate-page, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .rate-page {
+  margin-top: 18px;
+  text-align: center;
+  border-top: 4px solid $main-dark-color;
+
+  @media (min-width: $screen-md) {
+    margin-top: 40px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 

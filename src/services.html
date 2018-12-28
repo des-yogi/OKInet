@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <title>Services page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main-content" role="main">
+
+        <div class="container  news-page  service-block  service-block--page">
+          <h1 class="h1  h1--banner">Наші послуги</h1>
+
+          <div class="row">
+
+            <div class="col">
+              <article class="service-block__item">
+                <a href="service page.html" class="service-block__link">
+                  <div class="service-block__img-wrapper">
+                    <picture>
+                      <source srcset="img/service-item-01.jpg" media="(min-width: 768px)">
+                      <source srcset="img/service-item-01.jpg" media="(min-width: 480px)">
+                      <img src="img/service-item-01.jpg" alt="Услуга" width="375" height="387">
+                    </picture>
+                  </div>
+                  <div class="service-block__content">
+                    <h3>Видеонаблюдение</h3>
+                  </div>
+                </a>
+              </article>
+            </div>
+
+            <div class="col">
+              <article class="service-block__item">
+                <a href="service page.html" class="service-block__link">
+                  <div class="service-block__img-wrapper">
+                    <picture>
+                      <source srcset="img/service-item-02.jpg" media="(min-width: 768px)">
+                      <source srcset="img/service-item-02.jpg" media="(min-width: 480px)">
+                      <img src="img/service-item-02.jpg" alt="Услуга" width="375" height="387">
+                    </picture>
+                  </div>
+                  <div class="service-block__content">
+                    <h3>Обслуживание техники</h3>
+                  </div>
+                </a>
+              </article>
+            </div>
+
+            <div class="col">
+              <article class="service-block__item">
+                <a href="service page.html" class="service-block__link">
+                  <div class="service-block__img-wrapper">
+                    <picture>
+                      <source srcset="img/service-item-03.jpg" media="(min-width: 768px)">
+                      <source srcset="img/service-item-03.jpg" media="(min-width: 480px)">
+                      <img src="img/service-item-03.jpg" alt="Услуга" width="375" height="387">
+                    </picture>
+                  </div>
+                  <div class="service-block__content">
+                    <h3>Collocation</h3>
+                  </div>
+                </a>
+              </article>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+  <!--
+  вызов модалки
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Модальное окно (демо)
+        </button> -->
+
+  @@include('_include/page_bottom.html')
+
+  @@include('blocks/modal/modal.html')
+</body>
+</html>

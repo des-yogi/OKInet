@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <title>404 page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main-content  main-content--page-404" role="main">
+
+        <div class="container  page-404">
+          <div class="row">
+
+            <div class="page-404__col">
+              <div class="page-404__text">
+                <h1 class="page-404__title">Сторінка не знайдена... <span>або ніколи не існувала :)</span></h1>
+                <a class="page-404__back-link" href="/">Повернутися на головну</a>
+              </div>
+            </div>
+
+            <div class="page-404__col-img">
+              <div class="page-404__img-wrapper">
+                <img class="page-404__img" src="img/page-404-img.svg" alt="Сторінка не знайдена..." width="793" height="518">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+  <!--
+  вызов модалки
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Модальное окно (демо)
+        </button> -->
+
+  @@include('_include/page_bottom.html')
+
+  @@include('blocks/modal/modal.html')
+</body>
+</html>
