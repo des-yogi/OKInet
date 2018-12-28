@@ -207,4 +207,17 @@ img {
   @media (min-width: $screen-xl) {
     padding-bottom: 90px;
   }
+
+  &--rates,
+  &--page-404 {
+    padding-bottom: 0;
+
+    @media (min-width: $screen-md) {
+      padding-bottom: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-bottom: 0;
+    }
+  }
 }

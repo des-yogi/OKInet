@@ -1,2 +1,0 @@
-# OKInet
-ISP site

@@ -1,9 +1,75 @@
-// В этом файле должны быть стили для БЭМ-блока action-single-page, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .action-single-page {
 
   $block-name:                &; // #{$block-name}__element
 
+  .col {
+    @include col(xs,12);
+    @include col-offset(md,1);
+    @include col(md,10);
+    @include col-offset(xl,2);
+    @include col(xl,8);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__header {
+    padding-top: 9px;
+    padding-bottom: 7px;
+    margin-bottom: 25px;
+    text-align: center;
+    background-color: $main-color;
+    border-top: 4px solid $main-dark-color;
+    border-bottom: 4px solid $main-dark-color;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    color: $white;
+  }
+
+  &__content {
+    box-shadow: $shadow-block;
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+    padding: 25px 15px;
+    text-align: left;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: $line-height * 0.7;
+      text-align: inherit;
+    }
+
+    p {
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      padding: 40px 25px;
+    }
+  }
 }

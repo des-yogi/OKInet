@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Service inner page</title>
+  <title>Service page</title>
   @@include('_include/page_head.html')
 </head>
 
@@ -14,12 +14,41 @@
     <div class="page__content">
       @@include('blocks/page-header/page-header.html')
 
-      <main class="main-content" role="main">
-        <div class="container">
-          <h1 class="">Новини</h1>
-        </div>
+      <main class="main-content  action-single-page  services-single-page" role="main">
 
+        <article class="action-single-page__article">
+          <div class="container action-single-page__header">
+            <h1 class="action-single-page__title">Відеоспостереження</h1>
+          </div>
 
+          <div class="container  action-single-page__container">
+            <div class="row">
+
+              <div class="col-service">
+                <section class="action-single-page__content">
+                  <div class="action-single-page__img-wrapper">
+                    <picture>
+                      <source srcset="img/service-item-desktop@1x.jpg" media="(min-width: 768px)">
+                      <img src="img/service-item-mobile@1x.jpg" alt="Картинка к статье" width="604" height="243">
+                    </picture>
+                  </div>
+                  <div class="action-single-page__text">
+                    <p>Мы предоставляем клиентам услуги размещения оборудования в нашем дата-центре и подключение его к высокоскоростному магистральному каналу сети Интернет.</p>
+                    <h2>Подзаголовок статьи</h2>
+                    <p>Компания "OKINET" выполняет проектирование и монтаж цифровых систем видеонаблюдения.</p>
+                    <p>Организовываем удаленное видеонаблюдение на Ваше мобильное устройство (КПК, iPhone, iPad и т.д.).</p>
+                    <p>Проводит анализ работы старых систем видеонаблюдения, модернизацию и ремонт с гарантийным и после гарантийным обслуживанием.</p>
+                    <h2>Подзаголовок статьи</h2>
+                    <p>Компания "OKINET" выполняет проектирование и монтаж цифровых систем видеонаблюдения.</p>
+                    <p>Организовываем удаленное видеонаблюдение на Ваше мобильное устройство (КПК, iPhone, iPad и т.д.).</p>
+                    <p>Проводит анализ работы старых систем видеонаблюдения, модернизацию и ремонт с гарантийным и после гарантийным обслуживанием.</p>
+                  </div>
+                </section>
+              </div>
+
+            </div>
+          </div>
+        </article>
 
       </main>
 

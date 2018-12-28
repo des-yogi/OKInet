@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Contetnt (news, actions…) page</title>
+  <title>Content (news, actions…) page</title>
   @@include('_include/page_head.html')
 </head>
 
@@ -14,10 +14,36 @@
     <div class="page__content">
       @@include('blocks/page-header/page-header.html')
 
-      <main class="main-content" role="main">
-        <h1 class="visually-hidden">Главная страница интернет-провайдера OKinet™</h1>
+      <main class="main-content  action-single-page" role="main">
 
+        <article class="action-single-page__article">
+          <div class="container action-single-page__header">
+            <h1 class="action-single-page__title">Зимуй з Окінет! Підключай тариф 100 мбіт/с</h1>
+          </div>
 
+          <div class="container  action-single-page__container">
+            <div class="row">
+
+              <div class="col">
+                <section class="action-single-page__content">
+                  <div class="action-single-page__img-wrapper">
+                    <picture>
+                      <source srcset="img/action-1.svg" media="(min-width: 1280px)">
+                      <source srcset="img/action-1.svg" media="(min-width: 768px)">
+                      <img src="img/action-1.svg" alt="Картинка к статье" width="1005" height="420">
+                    </picture>
+                  </div>
+                  <div class="action-single-page__text">
+                    <p>Шановні абоненти!</p>
+                    <p>На жаль вимушені повідомити, що не в змозі надалі тримати низький рівень цін на послуги та роботи, які виконує наше підприємство.</p>
+                    <p>Ми не піднімали ціни багато років, не зважаючи на зростання цін на електроенергію, оренду та інфляцію в цілому.</p>
+                  </div>
+                </section>
+              </div>
+
+            </div>
+          </div>
+        </article>
 
       </main>
 

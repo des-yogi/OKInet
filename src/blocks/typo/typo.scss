@@ -99,6 +99,7 @@ h2 {
 
   &--banner {
     @include banner-caption;
+    white-space: nowrap;
   }
 }
 
