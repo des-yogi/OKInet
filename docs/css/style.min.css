@@ -3073,7 +3073,7 @@ a.btn--disabled {
   position: absolute;
   z-index: 100;
   left: 50%;
-  bottom: -245px;
+  bottom: -220px;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -3931,7 +3931,7 @@ a.btn--disabled {
   .customers__bank-details {
     padding-right: 100px; }
     .callme-block {
-      bottom: -255px; } }
+      bottom: -230px; } }
 @media (max-width: 767px) {
   .table-responsive {
     display: block;
