@@ -34,9 +34,10 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#tel-icon"/>
         </svg><span class="h4  page-header__callback-text">Зателефонуйте мені</span>
       </a>
+      @@include('../callme-block/callme-block.html')
     </section>
 
-    <button class="call-now-btn  call-now-btn--header" type="button">Підключитись</button>
+    <button id="call-now-header" class="call-now-btn  call-now-btn--header" type="button" data-toggle="modal" data-target="#request-modal">Підключитись</button>
   </div>
 
   <div class="page-header__navigation">

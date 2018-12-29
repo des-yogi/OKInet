@@ -6,15 +6,15 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   user-select: none;
   cursor: pointer;
 
   > span {
     display: inline-block;
     width: 100%;
-    height: $toggler-part-height;
+    height: 2px;
     background: transparent;
     position: relative;
 
@@ -25,8 +25,8 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: $toggler-part-height;
-      background: $toggler-part-bg-color;
+      height: 2px;
+      background: $white;
       transform-origin: 50% 50%;
     }
 

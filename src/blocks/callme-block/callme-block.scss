@@ -1,0 +1,38 @@
+.callme-block {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  bottom: -220px;
+  transform: translateX(-50%);
+  width: calc(100% - 20px);
+  max-width: 385px;
+  padding: 25px;
+  background-color: $white;
+  border-top: 4px solid $main-color;
+  box-shadow: $shadow-block;
+
+  &::after {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0.9);
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 16px solid $main-color;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+
+  @media (min-width: $screen-xl) {
+    bottom: -230px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  .modal__close-btn {
+    top: -4px;
+  }
+}

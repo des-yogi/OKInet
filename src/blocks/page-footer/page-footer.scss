@@ -191,6 +191,10 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
+
+      @media (min-width: $screen-xl) {
+        flex-basis: 100%;
+      }
     }
   }
 
@@ -306,6 +310,7 @@
     }
 
     @media (min-width: $screen-xl) {
+      margin-bottom: 0;
       margin-right: 50px;
     }
   }

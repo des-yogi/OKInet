@@ -1,0 +1,18 @@
+<!--DEV
+@ @include('blocks/callme-block/callme-block.html')
+-->
+<div class="callme-block" style="display:none;">
+  <button id="callme-block-close" type="button" class="modal__close-btn" aria-label="Закрити">
+    <span class="close"><span></span></span>
+  </button>
+  <form id="callback-form" class="form" action="" method="">
+    <h2 id="request-modal-title">Введіть ваш номер</h2>
+    <div class="form__controls-wrapper">
+      <input class="form__control" type="tel" name="tel" placeholder="Номер телефона" aria-label="Ваш номер телефону" required>
+      <span class="form__error"></span>
+    </div>
+    <div class="form__controls-wrapper  form__controls-wrapper--submit-btn">
+      <button id="submit-form" class="news-block__link  form__submit" type="submit">Надіслати</button>
+    </div>
+  </form>
+</div>
