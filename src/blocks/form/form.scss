@@ -1,7 +1,3 @@
-// В этом файле должны быть стили для БЭМ-блока form, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 // $font-family:       'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
 
 $font-size--h3:               1.5em !default;
@@ -9,6 +5,7 @@ $font-size--h3:               1.5em !default;
 $line-height:                 1.375em !default;
 
 .form {
+  text-align: left;
 
   $block-name:                &; // #{$block-name}__element
 
@@ -33,5 +30,108 @@ $line-height:                 1.375em !default;
     font-weight: 700;
     line-height: $line-height;
     color: currentColor;
+  }
+
+  &__controls-wrapper {
+    max-width: 100%;
+    margin-bottom: 5px;
+
+    &--submit-btn,
+    &--checkbox {
+      margin-top: 20px;
+    }
+  }
+
+  &__control {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid $text-muted;
+
+    &:hover,
+    &:focus {
+      border-color: $main-color;
+      outline: none;
+    }
+  }
+
+  &__error {
+    display: block;
+    //min-height: 25px;
+    font-size: 12px;
+    font-weight: inherit;
+    color: $main-color;
+  }
+
+  &__submit {
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+
+    &--disabled {
+      color: $text-muted !important;
+      background-color: $white !important;
+      border-color: $text-muted !important;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__agreement-lbl {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 40px;
+    padding-right: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+
+    &::after {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      box-sizing: inherit;
+      border: 3px solid $text-muted;
+      background-color: $white;
+      border-radius: 0;
+      opacity: 1;
+      box-shadow: 0 0 0 3px $white, 1px 1px 6px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    &:hover,
+    &:focus {
+      //outline: none;
+
+      &::after {
+        border-color: $main-color;
+      }
+    }
+  }
+}
+
+#agreement:checked + label[for=agreement] {
+
+  &::after {
+    border-color: $main-color;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 6px;
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: $main-color;
   }
 }

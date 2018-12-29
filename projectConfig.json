@@ -41,14 +41,16 @@
     "page-404": [],
     "tv-page": [],
     "tv-rate-block": [],
-    "subscribers-page": [],
     "vacancy-page": [],
     "contacts-page": [],
     "partners-block": [],
     "copyrights": [],
     "call-now-btn": [],
     "pagination": [],
-    "customers": []
+    "customers": [],
+    "callme-block": [],
+    "request-modal": [],
+    "mapinfo-popup": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

@@ -1,0 +1,45 @@
+<!--DEV
+@ @include('blocks/request-modal/request-modal.html')
+-->
+
+<div class="modal  fade  request-modal" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="request-modal-title" aria-hidden="true" aria-modal="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="modal__close-btn" data-dismiss="modal" aria-label="Закрити">
+          <span class="close"><span></span></span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="connection-request-form" class="form" action="" method="" aria-label="Заявка на підключення">
+          <h2 id="request-modal-title">Заявка на підключення</h2>
+          <div class="form__controls-wrapper">
+            <input class="form__control" type="text" name="name" placeholder="Ваше имя" required>
+            <span class="form__error">Ошибка</span>
+          </div>
+          <div class="form__controls-wrapper">
+            <input class="form__control" type="tel" name="tel" placeholder="Ваш телефон" required>
+            <span class="form__error">Ошибка</span>
+          </div>
+          <div class="form__controls-wrapper">
+            <input class="form__control" type="email" name="email" placeholder="Ваш Email">
+            <span class="form__error">Ошибка</span>
+          </div>
+          <div class="form__controls-wrapper">
+            <img src="img/recapcha.jpg" alt="re" width="250" height="67">
+            <span class="form__error"></span>
+          </div>
+          <div class="form__controls-wrapper  form__controls-wrapper--submit-btn">
+            <button id="submit-form" class="news-block__link  form__submit" type="submit">Надіслати</button>
+          </div>
+          <div class="form__controls-wrapper  form__controls-wrapper--checkbox">
+            <input id="agreement" class="form__checkbox" type="checkbox" checked>
+            <label class="form__agreement-lbl" for="agreement" tabindex="0" role="button" aria-pressed="false">Згода на обробку данніх</label>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

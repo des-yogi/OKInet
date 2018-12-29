@@ -69,7 +69,11 @@
     }
 
     @media (min-width: $screen-md) {
-      padding: 40px 25px;
+      padding: 40px 35px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 40px 30px;
     }
   }
 }

@@ -1,9 +1,11 @@
-// В этом файле должны быть стили для БЭМ-блока home-single-page, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .home-single-page {
 
   $block-name:                &; // #{$block-name}__element
 
+  .form-col {
+    @include col(xs,12);
+    @include col-offset(md,1);
+    @include col(md,8);
+    @include col(lg,6);
+  }
 }
