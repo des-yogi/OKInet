@@ -8,14 +8,12 @@
     agreementCtrl.setAttribute('checked', 'true');
     submitBtn.disabled = false;
     submitBtn.classList.remove('form__submit--disabled');
-    agreementLbl.setAttribute('aria-pressed', 'true');
   };
 
   function makeUnChecked() {
     agreementCtrl.removeAttribute('checked');
     submitBtn.disabled = true;
     submitBtn.classList.add('form__submit--disabled');
-    agreementLbl.setAttribute('aria-pressed', 'false');
   };
 
   var inputChangeState = function (e) {
