@@ -68,6 +68,14 @@
     padding-bottom: 70px !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+
+    @media (min-width: $screen-xl) {
+      justify-content: space-between;
+      // padding-top: 17px;
+      // padding-bottom: 15px;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
   }
 
   &__all-links {
@@ -93,6 +101,21 @@
       color: $white;
       background-color: $second-color;
       outline: none;
+    }
+  }
+
+  &__btn {
+
+    &--prev,
+    &--next {
+
+      @media (min-width: $screen-xl) {
+        transform: none;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      position: static;
     }
   }
 }
