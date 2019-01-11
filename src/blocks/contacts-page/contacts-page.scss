@@ -18,6 +18,11 @@
     @include col(xl,6);
   }
 
+  .col-map {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .page-footer__contacts {
     text-align: left;
     background-color: transparent;
@@ -55,14 +60,6 @@
     border-top: none;
     height: 320px;
     overflow: hidden;
-
-    @media (min-width: $screen-md) {
-      height: 475px;
-    }
-
-    @media (min-width: $screen-xl) {
-      height: 320px;
-    }
   }
 
   .map-block__map {}

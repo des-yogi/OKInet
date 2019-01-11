@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 100;
   left: 50%;
-  bottom: -220px;
+  bottom: -245px;
   transform: translateX(-50%);
   width: calc(100% - 20px);
   max-width: 385px;
@@ -27,7 +27,7 @@
   }
 
   @media (min-width: $screen-xl) {
-    bottom: -230px;
+    bottom: -255px;
   }
 
   $block-name:                &; // #{$block-name}__element

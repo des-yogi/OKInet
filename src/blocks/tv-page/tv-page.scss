@@ -149,10 +149,14 @@
   }
 
   &__rates-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     box-shadow: $shadow-block;
   }
 
   &__rates-text {
+    flex: 1 1;
     padding: 25px 15px;
   }
 
@@ -166,7 +170,12 @@
     display: block;
   }
 
-  &__rates-price {}
+  &__rates-price {
+
+    & > span {
+      color: $main-color;
+    }
+  }
 
   &__rates-descr {
     font-size: 18px;
@@ -174,6 +183,7 @@
 
     span {
       font-weight: 700;
+      color: $main-color;
     }
   }
 
