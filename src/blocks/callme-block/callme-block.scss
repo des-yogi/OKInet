@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 100;
   left: 50%;
-  bottom: -245px;
+  top: 100px;
   transform: translateX(-50%);
   width: calc(100% - 20px);
   max-width: 385px;
@@ -26,8 +26,8 @@
     border-right-color: transparent;
   }
 
-  @media (min-width: $screen-xl) {
-    bottom: -255px;
+  @media (min-width: $screen-md) {
+    top: 65px;
   }
 
   $block-name:                &; // #{$block-name}__element

@@ -110,7 +110,7 @@ $line-height:                 1.375em !default;
 
     &:hover,
     &:focus {
-      //outline: none;
+      outline: none;
 
       &::after {
         border-color: $main-color;
