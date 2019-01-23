@@ -66,15 +66,13 @@
   &__control-wrapper {
     padding-top: 30px !important;
     padding-bottom: 70px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
 
     @media (min-width: $screen-xl) {
       justify-content: space-between;
-      // padding-top: 17px;
-      // padding-bottom: 15px;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
+      padding-left: 3px !important;
+      padding-right: 3px !important;
     }
   }
 
@@ -112,6 +110,14 @@
       @media (min-width: $screen-xl) {
         transform: none;
       }
+    }
+
+    &--prev {
+
+    }
+
+    &--next {
+
     }
 
     @media (min-width: $screen-xl) {
