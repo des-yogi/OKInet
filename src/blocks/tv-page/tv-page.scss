@@ -36,16 +36,16 @@
 
     &--media {
       @include col(xs,12);
-      @include col-offset(md,2);
-      @include col(md,8);
+      @include col-offset(md,1);
+      @include col(md,10);
       @include col-offset(xl,0);
       @include col(xl,6);
     }
 
     &--media-content {
       @include col(xs,12);
-      @include col-offset(md,2);
-      @include col(md,8);
+      @include col-offset(md,1);
+      @include col(md,10);
       @include col-offset(xl,1);
       @include col(xl,5);
     }
@@ -265,6 +265,111 @@
         width: 38px;
         height: 48px;
       }
+    }
+  }
+
+  &__price-banner {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    box-shadow: $shadow-block;
+
+    .col {
+      position: relative;
+      padding: 20px 25px;
+
+      &:first-child {
+        color: $white;
+        background-color: $second-color;
+
+        &::before {
+          @include top-right-triangle($white, 0, 0, 38px, 38px);
+        }
+      }
+
+      &:last-child {
+
+        &::before {
+          @include top-right-triangle($third-color, 0, 0, 38px, 38px);
+        }
+      }
+
+      @media (min-width: $screen-md) {
+        width: 50%;
+        flex: 1 1;
+        padding: 25px 20px;
+      }
+    }
+
+    dl {
+      margin: 0;
+    }
+
+    dd {
+      margin-left: 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      td {
+        padding: 0;
+        font-weight: 500;
+
+        &:last-child {
+          font-weight: 700;
+          color: $main-dark-color;
+        }
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__price-banner-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &--table {
+      color: $main-dark-color;
+    }
+  }
+
+  &__media-content-wrapper {
+    width: 100%;
+    margin-top: 40px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (min-width: $screen-lg) {
+      height: 195px;
+      margin-top: 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      height: 210px;
     }
   }
 }

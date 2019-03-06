@@ -35,15 +35,15 @@
    -ms-interpolation-mode: nearest-neighbor; /* IE */
 }
 
-@mixin top-right-triangle($bg-color, $top, $right) {
+@mixin top-right-triangle($bg-color, $top, $right, $width: 26px, $height: 26px) {
   position: absolute;
   z-index: 5;
   top: $top;
   right: $right;
   content: "";
   display: block;
-  width: 26px;
-  height: 26px;
+  width: $width;
+  height: $height;
   background: linear-gradient(45deg, transparent, transparent 50%, $bg-color 50%, $bg-color);
   filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.25));
 }
