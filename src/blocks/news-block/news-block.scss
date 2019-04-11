@@ -32,7 +32,9 @@
 
   &__title {
     margin-top: 0;
+    min-height: 72px;
     text-align: inherit;
+    overflow: hidden;
   }
 
   &__date {
