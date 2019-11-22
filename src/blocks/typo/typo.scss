@@ -199,6 +199,7 @@ a {
   text-decoration: none;
   color: $second-color;
   text-decoration-skip-ink: auto;
+  transition: all 0.3s ease-out;
 
   &:hover,
   &:active,
@@ -213,4 +214,14 @@ a, b, i, strong, em, small, code {
 
 q {
   quotes:  "«" "»";
+}
+
+table {
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 5px 10px;
+    text-align: left;
+  }
 }

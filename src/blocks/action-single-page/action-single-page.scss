@@ -76,4 +76,12 @@
       padding: 40px 30px;
     }
   }
+
+  &__intro {
+    margin-bottom: 25px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 35px;
+    }
+  }
 }
