@@ -32,6 +32,11 @@
       @include col-offset(lg,1);
       @include col(lg,10);
     }
+
+    &--quadro {
+      @include col(md,6);
+      @include col(xl,3);
+    }
   }
 
   &__col-switcher {
