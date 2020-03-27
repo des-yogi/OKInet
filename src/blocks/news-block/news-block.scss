@@ -4,8 +4,25 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  .swiper-wrapper {
+    box-sizing: border-box;
+  }
+
   &__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: auto;
     box-shadow: $shadow-block;
+
+    & > * {
+      width: 100%;
+    }
+
+    #{$block-name}__link {
+      align-self: flex-end;
+      margin-top: auto;
+    }
   }
 
   &__img-wrapper {
