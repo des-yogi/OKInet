@@ -56,7 +56,7 @@ $line-height:                 1.375em !default;
 
   &__error {
     display: block;
-    //min-height: 25px;
+    min-height: 25px;
     font-size: 12px;
     font-weight: inherit;
     color: $main-color;
@@ -82,11 +82,13 @@ $line-height:                 1.375em !default;
 
   &__agreement-lbl {
     position: relative;
+    display: inline-block;
+    vertical-align: top;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 40px;
     padding-right: 5px;
-    white-space: nowrap;
+    font-size: smaller;
     cursor: pointer;
     user-select: none;
 
@@ -108,7 +110,7 @@ $line-height:                 1.375em !default;
 
     &:hover,
     &:focus {
-      //outline: none;
+      outline: none;
 
       &::after {
         border-color: $main-color;
@@ -117,7 +119,8 @@ $line-height:                 1.375em !default;
   }
 }
 
-#agreement:checked + label[for=agreement] {
+#agreement:checked + label[for=agreement],
+#page-agreement:checked + label[for=page-agreement] {
 
   &::after {
     border-color: $main-color;

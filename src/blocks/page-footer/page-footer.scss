@@ -57,15 +57,17 @@
     flex-wrap: wrap;
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: 20px;
 
     @media (min-width: $screen-md) {
       flex: 1 1;
       margin-right: 40px;
+      margin-bottom: 0;
     }
 
     @media (min-width: $screen-xl) {
       flex-basis: 100%;
-      margin-bottom: auto;
+      margin-bottom: 20px;
     }
   }
 
@@ -74,6 +76,14 @@
     @include col(xl,5);
     padding-right: 0;
     margin-bottom: 10px;
+
+    &.active {
+
+      a {
+        text-decoration: none;
+        pointer-events: none;
+      }
+    }
   }
 
   &__nav-link,
@@ -212,6 +222,7 @@
 
     span {
       display: block;
+      flex-shrink: 0;
       width: 35px;
       height: 35px;
       margin-right: 15px;

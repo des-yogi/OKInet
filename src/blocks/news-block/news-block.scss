@@ -49,7 +49,9 @@
 
   &__title {
     margin-top: 0;
+    min-height: 72px;
     text-align: inherit;
+    overflow: hidden;
   }
 
   &__date {
@@ -83,8 +85,14 @@
   &__control-wrapper {
     padding-top: 30px !important;
     padding-bottom: 70px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+
+    @media (min-width: $screen-xl) {
+      justify-content: space-between;
+      padding-left: 3px !important;
+      padding-right: 3px !important;
+    }
   }
 
   &__all-links {
@@ -110,6 +118,29 @@
       color: $white;
       background-color: $second-color;
       outline: none;
+    }
+  }
+
+  &__btn {
+
+    &--prev,
+    &--next {
+
+      @media (min-width: $screen-xl) {
+        transform: none;
+      }
+    }
+
+    &--prev {
+
+    }
+
+    &--next {
+
+    }
+
+    @media (min-width: $screen-xl) {
+      position: static;
     }
   }
 }
