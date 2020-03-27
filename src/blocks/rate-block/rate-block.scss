@@ -22,6 +22,7 @@
     margin-bottom: 20px;
     @include col(xs,12);
     @include col(md,4);
+    //@include col(lg,4);
 
     &--info-text {
       margin-top: 20px;
@@ -33,9 +34,9 @@
       @include col(lg,10);
     }
 
-    &--quadro {
+    &--4 {
       @include col(md,6);
-      @include col(xl,3);
+      @include col(lg,3);
     }
   }
 
