@@ -1,0 +1,9 @@
+// В этом файле должны быть стили для БЭМ-блока video-how-to, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.video-how-to {
+
+  $block-name:                &; // #{$block-name}__element
+
+}

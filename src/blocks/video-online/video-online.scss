@@ -1,0 +1,69 @@
+.video-online {
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: $white;
+  border-top: 4px solid $main-dark-color;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.35);
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 70px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  &__col {
+    @include col(xs, 12);
+    @include col(sm, 6);
+    margin-bottom: 25px;
+  }
+
+  &__link {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    //text-decoration: none;
+    text-align: left;
+    color: $text-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $main-color;
+    }
+  }
+
+  &__img {
+
+  }
+
+  &__figure {
+    margin: 0;
+  }
+
+  &__caption {
+    margin-top: 10px;
+
+    @media (min-width: $screen-md) {
+      margin-top: 15px;
+    }
+  }
+}

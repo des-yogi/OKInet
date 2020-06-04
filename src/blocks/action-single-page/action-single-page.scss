@@ -1,5 +1,9 @@
 .action-single-page {
 
+  @media (min-width: $screen-md) {
+    padding-top: 40px;
+  }
+
   $block-name:                &; // #{$block-name}__element
 
   .col {

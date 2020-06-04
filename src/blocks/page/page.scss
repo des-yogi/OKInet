@@ -224,3 +224,16 @@ img {
     }
   }
 }
+
+.list-nostyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  li::before {
+    display: none;
+  }
+}
+
+// background: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);

@@ -17,6 +17,7 @@
 
   // embed,
   // object,
+  img,
   iframe,
   video {
     position: absolute;
@@ -28,12 +29,37 @@
     border: 0;
   }
 
+  img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
 
+  &--1-1 {
+
+    &::before {
+      padding-top: percentage(1 / 1);
+    }
+  }
 
   &--4-3 { // модификатор на случай вставки 4/3
 
     &::before {
       padding-top: percentage(3 / 4);
+    }
+  }
+
+  &--16-10 {
+
+    &::before {
+      padding-top: percentage(10 / 16);
+    }
+  }
+
+  &--21-9 {
+
+    &::before {
+      padding-top: percentage(9 / 21);
     }
   }
 }
