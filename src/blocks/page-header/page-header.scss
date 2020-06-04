@@ -70,6 +70,7 @@
       justify-content: flex-start;
       width: auto;
       margin-left: 40px;
+      margin-right: 40px;
       box-shadow: none;
     }
   }
@@ -89,6 +90,9 @@
   }
 
   &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     width: 100%;
     padding-top: 15px;
@@ -99,14 +103,21 @@
     box-shadow: inset 0 3px 5px -1.5px rgba(0, 0, 0, 0.25);
 
     @media (min-width: $screen-md) {
-      display: flex;
+      flex-direction: row;
       justify-content: flex-start;
-      align-items: center;
       width: auto;
       padding: 0;
       margin-left: auto;
       margin-right: auto;
       box-shadow: none;
+    }
+
+    @media (min-width: $screen-lg) {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+      margin-left: 40px;
+      margin-right: 25px;
     }
 
     @media (min-width: $screen-xl) {
@@ -125,6 +136,10 @@
     @media (min-width: $screen-md) {
       flex-direction: column;
       margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: auto;
     }
   }
 
@@ -154,12 +169,13 @@
   &__contacts-callback {
     display: inline-block;
     vertical-align: middle;
-    padding: 0 10px;
+    //padding: 0 10px;
     cursor: pointer;
 
     &:hover,
     &:active,
     &:focus {
+      text-decoration: none;
       svg {
         animation: rotate-light 0.3s ease-in-out infinite both;
       }
@@ -168,10 +184,10 @@
     @media (min-width: $screen-md) {
       display: flex;
       padding-left: 0;
-      margin-left: 40px;
+      margin-left: 20px;
     }
 
-    @media (min-width: $screen-xl) {
+    @media (min-width: $screen-lg) {
       margin-left: 40px;
     }
   }
@@ -190,11 +206,54 @@
     display: inline-block;
     vertical-align: middle;
     margin: 0;
+    font-size: 16px;
+    font-weight: 700;
     color: currentColor;
     text-decoration: inherit;
+    cursor: pointer;
 
     @media (min-width: $screen-md) {
       white-space: nowrap;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 18px;
+    }
+  }
+
+  &__video-link {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 20px;
+    color: $main-color;
+
+    @media (min-width: $screen-md) {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-left: auto;
+    }
+
+    &:hover,
+    &:focus {
+
+      svg {
+        .text {
+          fill: currentColor;
+        }
+      }
+    }
+
+    svg {
+      display: block;
+      width: 77px;
+      height: 35px;
+
+      .text {
+        transition: fill 0.2s ease-out;
+      }
     }
   }
 

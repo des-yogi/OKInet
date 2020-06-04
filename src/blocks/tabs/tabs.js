@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function(){
     showTab(location.hash);
   }
 
+  var tabLazy = new Blazy({
+    selector: '.tab-lazy-img'
+  });
+
   // Следим за поднимающимися кликами
   document.addEventListener('click', function(event) {
     if(event.target.dataset.toggle === 'tab') {
@@ -11,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function(){
       var target = event.target.hash === undefined ? event.target.dataset.target : event.target.hash;
       if ( target !== undefined ) {
         showTab(target);
+        tabLazy.revalidate();
         if(history && history.pushState && history.replaceState) {
           var stateObject = {'url' : target};
           if (window.location.hash && stateObject.url !== window.location.hash) {

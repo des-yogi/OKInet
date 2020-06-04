@@ -1,0 +1,110 @@
+.video-equipment-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 15px;
+  background: #FDFDFD;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.35);
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__img {
+    max-width: 205px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 24px;
+  }
+
+  &__text-top {
+
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__price {
+    display: block;
+    margin-top: 0.5em;
+    font-weight: 500;
+    color: $second-color;
+  }
+
+  &__text-botoom {
+
+  }
+
+  &__options {
+
+  }
+
+  &__opt-item {
+    position: relative;
+    padding-left: 36px;
+    font-size: 16px;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      //background-color: red;
+      transform: translateY(-1px);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    & + & {
+      margin-top: 0.6em;
+    }
+
+    span {
+      font-weight: 500;
+    }
+
+    &--size {
+
+      &::after {
+        background-size: 20px 14px;
+        background-image: svg-load('../blocks/video-equipment-card/bg-img/cam-icon.svg', fill=$text-color);
+      }
+    }
+
+    &--sensor {
+
+      &::after {
+        background-size: 20px 20px;
+        background-image: svg-load('../blocks/video-equipment-card/bg-img/sensor-icon.svg', fill=$text-color);
+      }
+    }
+
+    &--up-to {
+
+      &::after {
+        background-size: 22px 18px;
+        background-image: svg-load('../blocks/video-equipment-card/bg-img/scale-icon.svg', fill=$text-color);
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}

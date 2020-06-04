@@ -52,7 +52,7 @@
   display: inline-block;
   vertical-align: top;
   padding: 10px 60px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   color: $white;
   // background-color: $main-color;
   background-image: svg-load('../img/left-corner.svg', fill=$main-dark-color),
@@ -61,4 +61,12 @@
   background-repeat: no-repeat;
   background-size: contain, contain, cover;
   background-position: left center, right center, center;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 40px;
+  }
 }
