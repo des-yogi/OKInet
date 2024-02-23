@@ -40,9 +40,9 @@ body {
   color: $text-color;
   text-decoration-skip-ink: auto;
 
-  @media (min-width: $screen-xl) {
-    font-size: 18px;
-  }
+  // @media (min-width: $screen-xl) {
+  //   font-size: 18px;
+  // }
 }
 
 .h1,

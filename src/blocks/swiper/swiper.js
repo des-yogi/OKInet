@@ -1,15 +1,15 @@
 var mainSwiper = new Swiper('.main-slider', {
     speed: 400,
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 20,
     centeredSlides: true,
     grabCursor: true,
     loop: true,
     breakpointsInverse: true, // when window width is >= 320px
-    /*autoplay: {
-      delay: 3500,
+    autoplay: {
+      delay: 4500,
       disableOnInteraction: true,
-    },*/
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',

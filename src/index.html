@@ -17,37 +17,85 @@
       <main class="main-content" role="main">
         <h1 class="visually-hidden">Главная страница интернет-провайдера OKinet™</h1>
 
-        <div class="container  container--slider">
-
-          <div class="row  row--slider">
+        <div class="container" style="position: relative; background: #F8F8F8;">
+            <!-- container--slider (del) -->
+          <div class="row">
             <div class="slider-col">
               <div class="main-slider  swiper-container">
                 <div class="swiper-wrapper">
+
                   <div class="main-slider__item  swiper-slide">
-                    <a class="main-slider__link" href="" title="Название слайда">
+                    <div class="main-slider__text">
+                      <h2 class="h1  main-slider__title">Акція 10 + 2</h2>
+                      <div class="main-slider__info">
+                        <p>Всі абоненти, які підключенні на тарифні пакети «Комфорт 100» «Fiber 300», «fiber 1G» мають можливість протягом року сплатити 10 місяців та користуватися послугами 12 місяців</p>
+                      </div>
+                      <a class="btn  main-slider__link" href="#" title="Название слайда">
+                        Підключитись
+                      </a>
+                    </div>
+                    <div class="embed-responsive  embed-responsive--4-3  main-slider__img">
                       <picture>
-                        <source srcset="img/action-1.svg" media="(min-width: 1280px)">
-                        <source srcset="img/action-1.svg" media="(min-width: 768px)">
-                        <img class="main-slider__img" src="img/action-1.svg" alt="Slide 1" width="996" height="415">
+                        <source srcset="img/slide-img.webp,
+                                        img/slide-img.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                        <source srcset="img/slide-img.png,
+                                        img/slide-img.png 2x" media="(min-width: 1280px)">
+                        <!-- 580x435, 870x652 2x -->
+                        <source srcset="img/slide-img.webp" media="(min-width: 768px)" type="image/webp">
+                        <source srcset="img/slide-img.png" media="(min-width: 768px)">
+                        <!-- 870x652-->
+                        <source srcset="img/slide-img.webp" media="(min-width: 480px)" type="image/webp">
+                        <source srcset="img/slide-img.png" media="(min-width: 480px)">
+                        <!-- 840x630-->
+                        <source srcset="img/slide-img.webp" media="(min-width: 320px)" type="image/webp">
+                        <source srcset="img/slide-img.png" media="(min-width: 320px)">
+                        <!-- 690x517-->
+                        <img src="img/slide-img.png" alt="Slide 1" width="580" height="435" loading="lazy">
                       </picture>
-                    </a>
+                    </div>
                   </div>
+
                   <div class="main-slider__item  swiper-slide">
-                    <a class="main-slider__link" href="" title="Название слайда">
+                    <div class="main-slider__text">
+                      <h2 class="h1  main-slider__title">Акція 10 + 2</h2>
+                      <div class="main-slider__info">
+                        <p>Всі абоненти, які підключенні на тарифні пакети «Комфорт 100» «Fiber 300», «fiber 1G» мають можливість протягом року сплатити 10 місяців та користуватися послугами 12 місяців</p>
+                      </div>
+                      <a class="btn  main-slider__link" href="#" title="Название слайда">
+                        Підключитись
+                      </a>
+                    </div>
+                    <div class="embed-responsive  embed-responsive--4-3  main-slider__img">
                       <picture>
-                        <source srcset="img/action-1.svg" media="(min-width: 1280px)">
-                        <source srcset="img/action-1.svg" media="(min-width: 768px)">
-                        <img class="main-slider__img" src="img/action-1.svg" alt="Slide 1" width="996" height="415">
+                        <source srcset="img/slide-img.webp,
+                                        img/slide-img.webp 2x" media="(min-width: 1280px)" type="image/webp">
+                        <source srcset="img/slide-img.png,
+                                        img/slide-img.png 2x" media="(min-width: 1280px)">
+                        <!-- 580x435, 870x652 2x -->
+                        <source srcset="img/slide-img.webp" media="(min-width: 768px)" type="image/webp">
+                        <source srcset="img/slide-img.png" media="(min-width: 768px)">
+                        <!-- 870x652-->
+                        <source srcset="img/slide-img.webp" media="(min-width: 480px)" type="image/webp">
+                        <source srcset="img/slide-img.png" media="(min-width: 480px)">
+                        <!-- 840x630-->
+                        <source srcset="img/slide-img.webp" media="(min-width: 320px)" type="image/webp">
+                        <source srcset="img/slide-img.png" media="(min-width: 320px)">
+                        <!-- 690x517-->
+                        <img src="img/slide-img.png" alt="Slide 1" width="580" height="435" loading="lazy">
                       </picture>
-                    </a>
+                    </div>
                   </div>
+
                 </div>
+
               </div>
+
               <div class="main-slider__control-wrapper">
                 <div class="main-slider__btn  main-slider__btn--prev  swiper-button-prev" tabindex="0" role="button" area-label="Попередній слайд"></div>
                 <div class="main-slider__pagination swiper-pagination"></div>
                 <div class="main-slider__btn  main-slider__btn--next  swiper-button-next" tabindex="0" role="button" area-label="Наступний слайд"></div>
               </div>
+
             </div>
           </div>
 

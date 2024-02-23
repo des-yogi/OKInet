@@ -34,9 +34,9 @@
   &:disabled {
     // opacity: $opacity;
     cursor: not-allowed;
-    color: $text-color;
-    background-color: $gray-lightest;
-    border-color: $gray-lighter;
+    color: $text-color !important;
+    background-color: $gray-lightest !important;
+    border-color: $gray-lightest !important;
 
     @at-root a.btn--disabled {
       pointer-events: none;

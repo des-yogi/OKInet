@@ -34,8 +34,10 @@
     }
 
     .ac-q {
-      padding: 13px 50px 13px 15px;
+      min-height: 48px;
+      padding: 14px 60px 14px 15px;
       font-size: inherit;
+      color: $text-color;
       user-select: none;
 
       &::after {
@@ -43,14 +45,15 @@
       }
 
       &::before {
+        display: block;
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
-        content: "";
-        display: block;
-        width: 50px;
-        height: 100%;
+        width: 48px;
+        height: 48px;
         background-color: $white;
+        background-size: 12px 24px;
         background-image: svg-load('../img/left-arrow.svg', fill=$second-color);
         background-position: center;
         background-repeat: no-repeat;
@@ -64,10 +67,9 @@
       }
     }
 
-    &.active {
+    &.is-active {
 
       .ac-q {
-        color: $text-color;
 
         &::before {
           background-color: $second-color;
