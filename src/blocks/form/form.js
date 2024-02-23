@@ -1,62 +1,23 @@
-(function(){
-  //var form = document.getElementById('connection-request-form');
-  var submitBtn = document.getElementById('submit-form-btn');
-  var pageSubmitBtn = document.getElementById('page-submit-form');
-  var agreementCtrl = document.getElementById('agreement');
-  var pageAgreementCtrl = document.getElementById('page-agreement');
-  var agreementLbl = document.querySelector('label[for=agreement]');
-  var pageAgreementLbl = document.querySelector('label[for=page-agreement]');
+(function () {
+  //const agreementElems = document.querySelectorAll('.contacts__agreement');
+  const agreementElems = document.querySelectorAll('[class$="__agreement"]');
 
-  function makeChecked() {
-    agreementCtrl.setAttribute('checked', 'true');
-    submitBtn.disabled = false;
-    submitBtn.classList.remove('form__submit--disabled');
-  };
+  for (let i = 0; i < agreementElems.length; i++) {
+    let agreementElem = agreementElems[i];
+    //const submitBtn = agreementElem.querySelector('.contacts__submit');
+    const submitBtn = agreementElem.querySelector('button[type=submit]');
+    const agreementCheckbox = agreementElem.querySelector('input[name=agreement]');
 
-  function makeUnChecked() {
-    agreementCtrl.removeAttribute('checked');
-    submitBtn.disabled = true;
-    submitBtn.classList.add('form__submit--disabled');
-  };
-
-  var inputChangeState = function (e) {
-    if ( agreementCtrl.checked ) {
-      makeChecked();
-      //console.log('Checked');
-    } else {
-      makeUnChecked();
-      //console.log('UnChecked');
-    }
-  };
-
-  var handleBtnKeyPress = function (e) {
-    if (e.key === " " || e.key === "Enter") {
-      e.preventDefault();
-      inputChangeState(e);
+    if (agreementCheckbox) {
+      agreementCheckbox.addEventListener('change', function (e) {
+        if (!e.target.checked) {
+          submitBtn.disabled = true;
+        } else {
+          submitBtn.disabled = false;
+        }
+      });
     }
   }
 
-  if (agreementCtrl) {
-    agreementCtrl.addEventListener('change', inputChangeState);
-  }
+})();
 
-  if (pageAgreementCtrl) {
-    pageAgreementCtrl.addEventListener('change', function (e) {
-
-      if ( pageAgreementCtrl.checked ) {
-        pageAgreementCtrl.setAttribute('checked', 'true');
-        pageSubmitBtn.disabled = false;
-        pageSubmitBtn.classList.remove('form__submit--disabled');
-
-      } else {
-        pageAgreementCtrl.removeAttribute('checked');
-        pageSubmitBtn.disabled = true;
-        pageSubmitBtn.classList.add('form__submit--disabled');
-      }
-    });
-  }
-
-  /*if (agreementLbl) {
-    agreementLbl.addEventListener('keypress', handleBtnKeyPress);
-  }*/
-}());

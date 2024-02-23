@@ -35,7 +35,7 @@
 
                     <div class="row">
                       <div class="form-col">
-                        <form id="page-request-form" class="form" action="" method="" aria-label="Заявка на підключення">
+                        <form id="page-request-form" class="form" action="" method="post">
                           <h2>Заявка на підключення</h2>
                           <div class="form__controls-wrapper">
                             <input class="form__control" type="text" name="name" placeholder="Ваше имя" required>
@@ -53,13 +53,17 @@
                             <img src="img/recapcha.jpg" alt="re" width="250" height="67">
                             <span class="form__error"></span>
                           </div>
-                          <div class="form__controls-wrapper  form__controls-wrapper--submit-btn">
-                            <button id="page-submit-form" class="news-block__link  form__submit" type="submit">Надіслати</button>
+
+                          <div class="form__agreement">
+                            <div class="form__controls-wrapper  form__controls-wrapper--submit-btn">
+                              <button class="btn  news-block__link  form__submit" type="submit">Надіслати</button>
+                            </div>
+                            <div class="form__controls-wrapper  form__controls-wrapper--checkbox">
+                              <input id="page-agreement" class="form__checkbox" name="agreement" type="checkbox" checked>
+                              <label class="form__agreement-lbl" for="page-agreement" tabindex="0">Згода на обробку данніх</label>
+                            </div>
                           </div>
-                          <div class="form__controls-wrapper  form__controls-wrapper--checkbox">
-                            <input id="page-agreement" class="form__checkbox" type="checkbox" checked>
-                            <label class="form__agreement-lbl" for="page-agreement" tabindex="0">Згода на обробку данніх</label>
-                          </div>
+
                         </form>
                       </div>
                     </div>

@@ -8,10 +8,11 @@ const browserSync = require('browser-sync').create();
 const realFavicon = require ('gulp-real-favicon');
 
 const postcss = require('gulp-postcss');
+const removeComments = require('postcss-discard-comments');
 const autoprefixer = require("autoprefixer");
 const mqpacker = require("css-mqpacker");
 const atImport = require("postcss-import");
-const cleanss = require('gulp-cleancss');
+const csso = require('gulp-csso');
 const inlineSVG = require('postcss-inline-svg');
 const objectFitImages = require('postcss-object-fit-images');
 
@@ -50,7 +51,7 @@ const isDev = !process.env.NODE_ENV || process.env.NODE_ENV == 'dev';
 
 // Перечисление и настройки плагинов postCSS, которыми обрабатываются стилевые файлы
 let postCssPlugins = [
-  autoprefixer(), // настройки вынесены в package.json, дабы получать их для любой задачи
+  autoprefixer({ grid: 'no-autoplace' }), // настройки вынесены в package.json, дабы получать их для любой задачи
   mqpacker({
     sort: true
   }),
@@ -58,6 +59,10 @@ let postCssPlugins = [
   inlineSVG(),
   objectFitImages(),
 ];
+
+let discardComments = [
+  removeComments(),
+]
 
 // Очистка папки сборки
 gulp.task('clean', function () {
@@ -70,7 +75,7 @@ gulp.task('clean', function () {
 
 // Компиляция стилей блоков проекта (и добавочных)
 gulp.task('style', function () {
-  const sass = require('gulp-sass');
+  const sass = require('gulp-sass')(require('node-sass'));
   const sourcemaps = require('gulp-sourcemaps');
   const wait = require('gulp-wait');
   console.log('---------- Компиляция стилей');
@@ -89,7 +94,14 @@ gulp.task('style', function () {
     .pipe(debug({title: "Style:"}))
     .pipe(sass())
     .pipe(postcss(postCssPlugins))
-    .pipe(gulpIf(!isDev, cleanss()))
+    .pipe(gulpIf(isDev,
+      postcss(discardComments)
+    ))
+    .pipe(gulpIf(!isDev,
+      csso({
+        restructure: false,
+      })
+    ))
     .pipe(rename('style.min.css'))
     .pipe(gulpIf(isDev, sourcemaps.write('/')))
     .pipe(size({
@@ -104,7 +116,7 @@ gulp.task('style', function () {
 // Компиляция отдельных файлов
 gulp.task('style:single', function (callback) {
   if(projectConfig.singleCompiled.length) {
-    const sass = require('gulp-sass');
+    const sass = require('gulp-sass')(require('node-sass'));
     const sourcemaps = require('gulp-sourcemaps');
     const wait = require('gulp-wait');
     console.log('---------- Компиляция добавочных стилей');
@@ -123,7 +135,11 @@ gulp.task('style:single', function (callback) {
       .pipe(debug({title: "Single style:"}))
       .pipe(sass())
       .pipe(postcss(postCssPlugins))
-      .pipe(gulpIf(!isDev, cleanss()))
+      .pipe(gulpIf(!isDev,
+        csso({
+          restructure: false,
+        })
+      ))
       .pipe(gulpIf(isDev, sourcemaps.write('/')))
       .pipe(size({
         title: 'Размер',
@@ -143,7 +159,9 @@ gulp.task('copy:css', function(callback) {
   if(projectConfig.copiedCss.length) {
     return gulp.src(projectConfig.copiedCss)
       .pipe(postcss(postCssPlugins))
-      .pipe(cleanss())
+      .pipe(csso({
+        restructure: false,
+      }))
       .pipe(size({
         title: 'Размер',
         showFiles: true,
@@ -284,9 +302,10 @@ gulp.task('sprite:svg', function (callback) {
         .pipe(svgmin(function (file) {
           return {
             plugins: [{
-              cleanupIDs: {
-                minify: true
-              }
+              name: 'cleanupIDs',
+              params: {
+                minify: true,
+              },
             }]
           }
         }))
@@ -463,6 +482,7 @@ gulp.task('deploy', function() {
     .pipe(ghPages());
 });
 
+// Задача по умолчанию
 // Локальный сервер, слежение
 gulp.task('serve', gulp.series('build', function() {
 
@@ -533,10 +553,10 @@ gulp.task('serve', gulp.series('build', function() {
 
 }));
 
-// Задача по умолчанию
 gulp.task('default',
   gulp.series('serve')
 );
+
 
 /**
  * Вернет объект с обрабатываемыми файлами и папками
@@ -587,15 +607,18 @@ function getFilesList(config){
       else {
         // console.log('---------- Блок ' + blockName + ' указан как используемый, но не имеет JS-файла.');
       }
+
       // Картинки (тупо от всех блоков, без проверки)
-      res.img.push(config.dirs.srcPath + config.dirs.blocksDirName + '/' + blockName + '/img/*.{jpg,jpeg,gif,png,svg}');
+      res.img.push(config.dirs.srcPath + config.dirs.blocksDirName + '/' + blockName + '/img/*.{jpg,jpeg,gif,png,webp,svg}');
 
       // Список директорий
       res.blocksDirs.push(config.dirs.blocksDirName + '/' + blockName + '/');
+
     }
     else {
       console.log('ERR ------ Блок ' + blockPath + ' указан как используемый, но такой папки нет!');
     }
+
   }
 
   // Добавления
@@ -604,8 +627,15 @@ function getFilesList(config){
   res.js = res.js.concat(config.addJsAfter);
   res.js = config.addJsBefore.concat(res.js);
   res.img = config.addImages.concat(res.img);
+
   return res;
 }
+
+/**
+ * Проверка существования файла или папки
+ * @param  {string} path      Путь до файла или папки]
+ * @return {boolean}
+ */
 
 function fileExist(filepath){
   let flag = true;

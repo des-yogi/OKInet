@@ -60,6 +60,10 @@ $line-height:                 1.375em !default;
     font-size: 12px;
     font-weight: inherit;
     color: $main-color;
+
+    &:empty {
+      display: none;
+    }
   }
 
   &__submit {
@@ -119,8 +123,8 @@ $line-height:                 1.375em !default;
   }
 }
 
-#agreement:checked + label[for=agreement],
-#page-agreement:checked + label[for=page-agreement] {
+input[name=agreement]:checked + label,
+#page-agreement:checked + label {
 
   &::after {
     border-color: $main-color;

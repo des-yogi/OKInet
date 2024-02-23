@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 10px;
+    padding-bottom: 10px;
 
     @media (min-width: $screen-md) {
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
@@ -69,8 +70,8 @@
     @media (min-width: $screen-xl) {
       justify-content: flex-start;
       width: auto;
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-left: 36px;
+      margin-right: 36px;
       box-shadow: none;
     }
   }
@@ -93,6 +94,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 12px 32px;
     position: relative;
     width: 100%;
     padding-top: 15px;
@@ -107,7 +109,7 @@
       justify-content: flex-start;
       width: auto;
       padding: 0;
-      margin-left: auto;
+      margin-left: 32px;
       margin-right: auto;
       box-shadow: none;
     }
@@ -116,14 +118,14 @@
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: auto;
-      margin-left: 40px;
-      margin-right: 25px;
+      //margin-left: 40px;
+      //margin-right: 25px;
     }
 
-    @media (min-width: $screen-xl) {
-      margin-left: 40px;
-      margin-right: 0;
-    }
+    // @media (min-width: $screen-xl) {
+    //   margin-left: 40px;
+    //   margin-right: 0;
+    // }
   }
 
   &__contacts-tel {
@@ -131,7 +133,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-bottom: 15px;
+    //margin-bottom: 12px;
 
     @media (min-width: $screen-md) {
       flex-direction: column;
@@ -145,8 +147,8 @@
 
   &__tel-link {
     display: block;
-    font-size: 0.875rem;
-    font-weight: 700;
+    font-size: $font-size;
+    font-weight: 500;
     color: $text-color;
 
     @media (min-width: $screen-xl) {
@@ -184,12 +186,12 @@
     @media (min-width: $screen-md) {
       display: flex;
       padding-left: 0;
-      margin-left: 20px;
+      //margin-left: 20px;
     }
 
-    @media (min-width: $screen-lg) {
-      margin-left: 40px;
-    }
+    // @media (min-width: $screen-lg) {
+    //   margin-left: 40px;
+    // }
   }
 
   &__callback-icon {
@@ -206,7 +208,7 @@
     display: inline-block;
     vertical-align: middle;
     margin: 0;
-    font-size: 16px;
+    font-size: $font-size;
     font-weight: 700;
     color: currentColor;
     text-decoration: inherit;
@@ -216,9 +218,9 @@
       white-space: nowrap;
     }
 
-    @media (min-width: $screen-lg) {
-      font-size: 18px;
-    }
+    // @media (min-width: $screen-lg) {
+    //   font-size: 18px;
+    // }
   }
 
   &__video-link {

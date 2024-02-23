@@ -1,8 +1,10 @@
 .slider-col {
-  @include col(xs,12);
-  padding: 0;
-  @include col-offset(xl,1);
-  @include col(xl,10);
+  @include col(xs, 12);
+  //padding: 0;
+  @include col-offset(md, 1);
+  @include col(md, 10);
+  @include col-offset(xl, 1);
+  @include col(xl, 11);
 
   @media (min-width: $screen-xl) {
     position: relative;
@@ -10,22 +12,69 @@
 }
 
 .main-slider {
-
+  max-width: 100%;
 
   $block-name:                &; // #{$block-name}__element
 
+  &__item {
+    padding-top: 40px;
+    padding-bottom: 20px;
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0 20px;
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    text-align: initial;
+  }
+
+  &__info {
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.4;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+
+    @media (min-width: $screen-xl) {
+      flex: 1 1 auto;
+      margin-bottom: 0;
+    }
+  }
+
   &__link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    //width: 100%;
+    //height: 100%;
+    //overflow: hidden;
   }
 
   &__img {
-    display: block;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+    display: flex;
+    justify-content: center;
+    max-width: 580px;
+    margin: 0 auto;
+
+    @media (min-width: $screen-xl) {
+      flex: 0 0 580px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
   }
 
   &__control-wrapper {
@@ -53,6 +102,7 @@
     width: 40px;
     height: 40px;
     margin-top: 0;
+    background-color: $white;
     background-position: center;
     background-size: 12px 24px;
     box-shadow: $shadow-btn;
@@ -60,7 +110,8 @@
 
     @media (min-width: $screen-xl) {
       position: absolute;
-      top: 150px;
+      top: 50%;
+      transform: translateY(-50%);
       z-index: 2;
       width: 48px;
       height: 48px;
@@ -70,7 +121,7 @@
       background-image: svg-load('../img/left-arrow.svg', fill=$second-color);
 
       @media (min-width: $screen-xl) {
-        transform: translateX(-75px);
+       transform: translate(-102px, -50%);
       }
 
       &:hover,
@@ -83,9 +134,9 @@
     &--next {
       background-image: svg-load('../img/right-arrow.svg', fill=$second-color);
 
-      @media (min-width: $screen-xl) {
-        transform: translateX(75px);
-      }
+      // @media (min-width: $screen-xl) {
+      //   transform: translateX(75px);
+      // }
 
       &:hover,
       &:focus {

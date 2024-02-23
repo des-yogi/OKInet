@@ -6,14 +6,14 @@
   transform: translateX(-50%);
   width: calc(100% - 20px);
   max-width: 385px;
-  padding: 25px;
+  padding: 28px 25px 25px;
   background-color: $white;
   border-top: 4px solid $main-color;
   box-shadow: $shadow-block;
 
   &::after {
     position: absolute;
-    top: -35px;
+    top: -33px;
     left: 50%;
     transform: translateX(-50%) scaleX(0.9);
     content: "";
@@ -27,12 +27,16 @@
   }
 
   @media (min-width: $screen-md) {
-    top: 65px;
+    top: 62px;
   }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    margin-top: 0;
+  }
+
   .modal__close-btn {
-    top: -4px;
+    top: -3px;
   }
 }
